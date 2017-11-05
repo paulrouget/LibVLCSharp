@@ -7,7 +7,6 @@ using CppSharp;
 using CppSharp.AST;
 using CppSharp.Generators;
 using CppSharp.Parser;
-using ASTContext = CppSharp.AST.ASTContext;
 
 namespace libvlcsharp
 {

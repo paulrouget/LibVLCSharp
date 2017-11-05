@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using CppSharp.AST;
 using CppSharp.Passes;
-using ASTContext = CppSharp.AST.ASTContext;
 
 namespace libvlcsharp
 {
