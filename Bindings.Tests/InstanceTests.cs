@@ -14,7 +14,7 @@ namespace Bindings.Tests
         {
             var instance = new Instance(0, null);
             instance.Dispose();
-            Assert.AreEqual(IntPtr.Zero, instance.NativeReference);
+            Assert.AreEqual(IntPtr.Zero, instance.__Instance);
         }
 
         [Test]

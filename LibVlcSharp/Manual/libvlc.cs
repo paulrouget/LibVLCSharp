@@ -31,9 +31,9 @@ namespace VideoLAN.LibVLC
     /// </summary>
     /// <summary>Type of a LibVLC event.</summary>
     /// <summary>Callback function notification</summary>
-    /// <param name="libvlcEvent">the event triggering the callback</param>
-    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void LibvlcCallbackT(IntPtr libvlcEvent, IntPtr data);
+    /// <param name="p_event">the event triggering the callback</param>
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(global::System.Runtime.InteropServices.CallingConvention.Cdecl)]
+    public unsafe delegate void LibvlcCallbackT(global::System.IntPtr p_event, global::System.IntPtr p_data);
 
     public unsafe partial class EventManager
     {
@@ -132,39 +132,31 @@ namespace VideoLAN.LibVLC
     /// <summary>Description of a module.</summary>
     public unsafe partial class ModuleDescription : IDisposable
     {
-        //[StructLayout(LayoutKind.Explicit, Size = 40)]
-        [StructLayout(LayoutKind.Sequential)]
-        public partial struct Internal
+        [StructLayout(LayoutKind.Explicit, Size = 40)]
+        public partial struct __Internal
         {
-            //[FieldOffset(0)]
-            //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))]
-            internal IntPtr psz_name;
+            [FieldOffset(0)]
+            internal global::System.IntPtr psz_name;
 
-            //[FieldOffset(8)]
-            //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))]
-            internal IntPtr psz_shortname;
+            [FieldOffset(8)]
+            internal global::System.IntPtr psz_shortname;
 
-            //[FieldOffset(16)]
-            //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))]
-            internal IntPtr psz_longname;
+            [FieldOffset(16)]
+            internal global::System.IntPtr psz_longname;
 
-            //[FieldOffset(24)]
-            //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))]
-            internal IntPtr psz_help;
+            [FieldOffset(24)]
+            internal global::System.IntPtr psz_help;
 
-            //[FieldOffset(32)]
-            //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(Utf8StringMarshaler))]
-            internal IntPtr p_next;
+            [FieldOffset(32)]
+            internal global::System.IntPtr p_next;
 
-            //[SuppressUnmanagedCodeSecurity]
-            //[DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            //    EntryPoint="??0libvlc_module_description_t@@QEAA@AEBU0@@Z")]
-            //internal static extern global::System.IntPtr cctor(global::System.IntPtr instance, global::System.IntPtr _0);
-
-           
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="??0libvlc_module_description_t@@QEAA@AEBU0@@Z")]
+            internal static extern global::System.IntPtr cctor(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
-        public IntPtr NativeReference { get; protected set; }
+        public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.ModuleDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.ModuleDescription>();
@@ -177,45 +169,45 @@ namespace VideoLAN.LibVLC
             return new global::VideoLAN.LibVLC.ModuleDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.ModuleDescription __CreateInstance(global::VideoLAN.LibVLC.ModuleDescription.Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.ModuleDescription __CreateInstance(global::VideoLAN.LibVLC.ModuleDescription.__Internal native, bool skipVTables = false)
         {
             return new global::VideoLAN.LibVLC.ModuleDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.ModuleDescription.Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.ModuleDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.Internal));
-            *(global::VideoLAN.LibVLC.ModuleDescription.Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.__Internal));
+            *(global::VideoLAN.LibVLC.ModuleDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private ModuleDescription(global::VideoLAN.LibVLC.ModuleDescription.Internal native, bool skipVTables = false)
+        private ModuleDescription(global::VideoLAN.LibVLC.ModuleDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
+            NativeToManagedMap[__Instance] = this;
         }
-        
+
         protected ModuleDescription(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            NativeReference = new global::System.IntPtr(native);
+            __Instance = new global::System.IntPtr(native);
         }
 
         public ModuleDescription()
         {
-            NativeReference = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.__Internal));
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
+            NativeToManagedMap[__Instance] = this;
         }
 
         public ModuleDescription(global::VideoLAN.LibVLC.ModuleDescription _0)
         {
-            NativeReference = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ModuleDescription.__Internal));
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
-            *((global::VideoLAN.LibVLC.ModuleDescription.Internal*) NativeReference) = *((global::VideoLAN.LibVLC.ModuleDescription.Internal*) _0.NativeReference);
+            NativeToManagedMap[__Instance] = this;
+            *((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -225,39 +217,90 @@ namespace VideoLAN.LibVLC
 
         public virtual void Dispose(bool disposing)
         {
-            if (NativeReference == IntPtr.Zero)
+            if (__Instance == IntPtr.Zero)
                 return;
-
-
-            NativeToManagedMap.TryRemove(NativeReference, out var dummy);
-
-
-            NativeReference = IntPtr.Zero;
+            global::VideoLAN.LibVLC.ModuleDescription __dummy;
+            NativeToManagedMap.TryRemove(__Instance, out __dummy);
+            if (__ownsNativeInstance)
+                Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
 
-        public string Name => Marshal.PtrToStringAnsi(((Internal*)NativeReference)->psz_name);
+        public sbyte* PszName
+        {
+            get
+            {
+                return (sbyte*) ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_name;
+            }
 
-        public string Shortname => Marshal.PtrToStringAnsi(((Internal*)NativeReference)->psz_shortname);
+            set
+            {
+                ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+            }
+        }
 
-        public string Longname => Marshal.PtrToStringAnsi(((Internal*)NativeReference)->psz_longname);
+        public sbyte* PszShortname
+        {
+            get
+            {
+                return (sbyte*) ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_shortname;
+            }
+
+            set
+            {
+                ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_shortname = (global::System.IntPtr) value;
+            }
+        }
+
+        public sbyte* PszLongname
+        {
+            get
+            {
+                return (sbyte*) ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_longname;
+            }
+
+            set
+            {
+                ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_longname = (global::System.IntPtr) value;
+            }
+        }
+
+        public sbyte* PszHelp
+        {
+            get
+            {
+                return (sbyte*) ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_help;
+            }
+
+            set
+            {
+                ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->psz_help = (global::System.IntPtr) value;
+            }
+        }
+
+        public string Name => Marshal.PtrToStringAnsi(((__Internal*)__Instance)->psz_name);
+
+        public string Shortname => Marshal.PtrToStringAnsi(((__Internal*)__Instance)->psz_shortname);
+
+        public string Longname => Marshal.PtrToStringAnsi(((__Internal*)__Instance)->psz_longname);
       
-        public string Help => Marshal.PtrToStringAnsi(((Internal*)NativeReference)->psz_help);
-      
-        public ModuleDescription Next
+        public string Help => Marshal.PtrToStringAnsi(((__Internal*)__Instance)->psz_help);
+
+        public global::VideoLAN.LibVLC.ModuleDescription PNext
         {
             get
             {
                 global::VideoLAN.LibVLC.ModuleDescription __result0;
-                if (((global::VideoLAN.LibVLC.ModuleDescription.Internal*)NativeReference)->p_next == IntPtr.Zero) __result0 = null;
-                else if (NativeToManagedMap.ContainsKey(((Internal*) NativeReference)->p_next))
-                    __result0 = NativeToManagedMap[((Internal*) NativeReference)->p_next];
-                else __result0 = __CreateInstance(((Internal*) NativeReference)->p_next);
+                if (((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.ModuleDescription) global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.ModuleDescription.__CreateInstance(((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.ModuleDescription.Internal*) NativeReference)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.NativeReference;
+                ((global::VideoLAN.LibVLC.ModuleDescription.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
     }
@@ -281,17 +324,36 @@ namespace VideoLAN.LibVLC
                 EntryPoint="libvlc_printerr")]
             internal static extern global::System.IntPtr LibvlcPrinterr([MarshalAs(UnmanagedType.LPStr)] string fmt);
 
-            
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_release")]
+            internal static extern void LibvlcRelease(global::System.IntPtr p_instance);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_retain")]
             internal static extern void LibvlcRetain(global::System.IntPtr p_instance);
 
-           
-            
-          
-          
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_add_intf")]
+            internal static extern int LibvlcAddIntf(global::System.IntPtr p_instance, [MarshalAs(UnmanagedType.LPStr)] string name);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_set_exit_handler")]
+            internal static extern void LibvlcSetExitHandler(global::System.IntPtr p_instance, global::System.IntPtr cb, global::System.IntPtr opaque);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_set_user_agent")]
+            internal static extern void LibvlcSetUserAgent(global::System.IntPtr p_instance, [MarshalAs(UnmanagedType.LPStr)] string name, [MarshalAs(UnmanagedType.LPStr)] string http);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_set_app_id")]
+            internal static extern void LibvlcSetAppId(global::System.IntPtr p_instance, [MarshalAs(UnmanagedType.LPStr)] string id, [MarshalAs(UnmanagedType.LPStr)] string version, [MarshalAs(UnmanagedType.LPStr)] string icon);
+
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_get_version")]
@@ -337,11 +399,30 @@ namespace VideoLAN.LibVLC
                 EntryPoint="libvlc_log_get_object")]
             internal static extern void LibvlcLogGetObject(global::System.IntPtr ctx, sbyte** name, sbyte** header, ulong* id);
 
-        
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_log_unset")]
+            internal static extern void LibvlcLogUnset(global::System.IntPtr p_instance);
 
-          
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_log_set_file")]
+            internal static extern void LibvlcLogSetFile(global::System.IntPtr p_instance, global::System.IntPtr stream);
 
-            
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_module_description_list_release")]
+            internal static extern void LibvlcModuleDescriptionListRelease(global::System.IntPtr p_list);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_audio_filter_list_get")]
+            internal static extern global::System.IntPtr LibvlcAudioFilterListGet(global::System.IntPtr p_instance);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_video_filter_list_get")]
+            internal static extern global::System.IntPtr LibvlcVideoFilterListGet(global::System.IntPtr p_instance);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -389,7 +470,16 @@ namespace VideoLAN.LibVLC
             return Marshal.PtrToStringAnsi(__ret);
         }
 
-        
+        /// <summary>
+        /// <para>Decrement the reference count of a libvlc instance, and destroy it</para>
+        /// <para>if it reaches zero.</para>
+        /// </summary>
+        /// <param name="p_instance">the instance to destroy</param>
+        public static void LibvlcRelease(global::VideoLAN.LibVLC.Instance p_instance)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            __Internal.LibvlcRelease(__arg0);
+        }
 
         /// <summary>
         /// <para>Increments the reference count of a libvlc instance.</para>
@@ -398,17 +488,76 @@ namespace VideoLAN.LibVLC
         /// <param name="p_instance">the instance to reference</param>
         public static void LibvlcRetain(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             __Internal.LibvlcRetain(__arg0);
         }
 
-        
+        /// <summary>Try to start a user interface for the libvlc instance.</summary>
+        /// <param name="p_instance">the instance</param>
+        /// <param name="name">interface name, or NULL for default</param>
+        /// <returns>0 on success, -1 on error.</returns>
+        public static int LibvlcAddIntf(global::VideoLAN.LibVLC.Instance p_instance, string name)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            var __ret = __Internal.LibvlcAddIntf(__arg0, name);
+            return __ret;
+        }
 
-       
+        /// <summary>
+        /// <para>Registers a callback for the LibVLC exit event. This is mostly useful if</para>
+        /// <para>the VLC playlist and/or at least one interface are started with</para>
+        /// <para>libvlc_playlist_play() or libvlc_add_intf() respectively.</para>
+        /// <para>Typically, this function will wake up your application main loop (from</para>
+        /// <para>another thread).</para>
+        /// </summary>
+        /// <param name="p_instance">LibVLC instance</param>
+        /// <param name="cb">
+        /// <para>callback to invoke when LibVLC wants to exit,</para>
+        /// <para>or NULL to disable the exit handler (as by default)</para>
+        /// </param>
+        /// <param name="opaque">data pointer for the callback</param>
+        /// <remarks>
+        /// <para>This function should be called before the playlist or interface are</para>
+        /// <para>started. Otherwise, there is a small race condition: the exit event could</para>
+        /// <para>be raised before the handler is registered.</para>
+        /// <para>This function and libvlc_wait() cannot be used at the same time.</para>
+        /// </remarks>
+        public static void LibvlcSetExitHandler(global::VideoLAN.LibVLC.Instance p_instance, global::VideoLAN.LibVLC.Delegates.Action_IntPtr cb, global::System.IntPtr opaque)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            var __arg1 = cb == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cb);
+            __Internal.LibvlcSetExitHandler(__arg0, __arg1, opaque);
+        }
 
-       
+        /// <summary>
+        /// <para>Sets the application name. LibVLC passes this as the user agent string</para>
+        /// <para>when a protocol requires it.</para>
+        /// </summary>
+        /// <param name="p_instance">LibVLC instance</param>
+        /// <param name="name">human-readable application name, e.g. &quot;FooBar player 1.2.3&quot;</param>
+        /// <param name="http">HTTP User Agent, e.g. &quot;FooBar/1.2.3 Python/2.6.0&quot;</param>
+        /// <remarks>LibVLC 1.1.1 or later</remarks>
+        public static void LibvlcSetUserAgent(global::VideoLAN.LibVLC.Instance p_instance, string name, string http)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            __Internal.LibvlcSetUserAgent(__arg0, name, http);
+        }
 
-        
+        /// <summary>
+        /// <para>Sets some meta-information about the application.</para>
+        /// <para>See also libvlc_set_user_agent().</para>
+        /// </summary>
+        /// <param name="p_instance">LibVLC instance</param>
+        /// <param name="id">Java-style application identifier, e.g. &quot;com.acme.foobar&quot;</param>
+        /// <param name="version">application version numbers, e.g. &quot;1.2.3&quot;</param>
+        /// <param name="icon">application icon name, e.g. &quot;foobar&quot;</param>
+        /// <remarks>LibVLC 2.1.0 or later.</remarks>
+        public static void LibvlcSetAppId(global::VideoLAN.LibVLC.Instance p_instance, string id, string version, string icon)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            __Internal.LibvlcSetAppId(__arg0, id, version, icon);
+        }
+
         /// <summary>Retrieve libvlc version.</summary>
         /// <returns>a string containing the libvlc version</returns>
         /// <remarks>Example: &quot;1.1.0-git The Luggage&quot;</remarks>
@@ -541,15 +690,86 @@ namespace VideoLAN.LibVLC
             }
         }
 
-       
+        /// <summary>Unsets the logging callback.</summary>
+        /// <param name="p_instance">libvlc instance</param>
+        /// <remarks>
+        /// <para>This function deregisters the logging callback for a LibVLC instance.</para>
+        /// <para>This is rarely needed as the callback is implicitly unset when the instance</para>
+        /// <para>is destroyed.</para>
+        /// <para>This function will wait for any pending callbacks invocation to</para>
+        /// <para>complete (causing a deadlock if called from within the callback).</para>
+        /// <para>LibVLC 2.1.0 or later</para>
+        /// </remarks>
+        public static void LibvlcLogUnset(global::VideoLAN.LibVLC.Instance p_instance)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            __Internal.LibvlcLogUnset(__arg0);
+        }
 
-      
+        /// <summary>Sets up logging to a file.</summary>
+        /// <param name="p_instance">libvlc instance</param>
+        /// <param name="stream">
+        /// <para>FILE pointer opened for writing</para>
+        /// <para>(the FILE pointer must remain valid until libvlc_log_unset())</para>
+        /// </param>
+        /// <remarks>LibVLC 2.1.0 or later</remarks>
+        public static void LibvlcLogSetFile(global::VideoLAN.LibVLC.Instance p_instance, global::System.IntPtr stream)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            __Internal.LibvlcLogSetFile(__arg0, stream);
+        }
 
-       
+        /// <summary>Release a list of module descriptions.</summary>
+        /// <param name="p_list">the list to be released</param>
+        public static void LibvlcModuleDescriptionListRelease(global::VideoLAN.LibVLC.ModuleDescription p_list)
+        {
+            var __arg0 = ReferenceEquals(p_list, null) ? global::System.IntPtr.Zero : p_list.__Instance;
+            __Internal.LibvlcModuleDescriptionListRelease(__arg0);
+        }
 
-       
+        /// <summary>Returns a list of audio filters that are available.</summary>
+        /// <param name="p_instance">libvlc instance</param>
+        /// <returns>
+        /// <para>a list of module descriptions. It should be freed with libvlc_module_description_list_release().</para>
+        /// <para>In case of an error, NULL is returned.</para>
+        /// </returns>
+        /// <remarks>
+        /// <para>libvlc_module_description_t</para>
+        /// <para>libvlc_module_description_list_release</para>
+        /// </remarks>
+        public static global::VideoLAN.LibVLC.ModuleDescription LibvlcAudioFilterListGet(global::VideoLAN.LibVLC.Instance p_instance)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            var __ret = __Internal.LibvlcAudioFilterListGet(__arg0);
+            global::VideoLAN.LibVLC.ModuleDescription __result0;
+            if (__ret == IntPtr.Zero) __result0 = null;
+            else if (global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.ModuleDescription) global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.ModuleDescription.__CreateInstance(__ret);
+            return __result0;
+        }
 
-      
+        /// <summary>Returns a list of video filters that are available.</summary>
+        /// <param name="p_instance">libvlc instance</param>
+        /// <returns>
+        /// <para>a list of module descriptions. It should be freed with libvlc_module_description_list_release().</para>
+        /// <para>In case of an error, NULL is returned.</para>
+        /// </returns>
+        /// <remarks>
+        /// <para>libvlc_module_description_t</para>
+        /// <para>libvlc_module_description_list_release</para>
+        /// </remarks>
+        public static global::VideoLAN.LibVLC.ModuleDescription LibvlcVideoFilterListGet(global::VideoLAN.LibVLC.Instance p_instance)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            var __ret = __Internal.LibvlcVideoFilterListGet(__arg0);
+            global::VideoLAN.LibVLC.ModuleDescription __result0;
+            if (__ret == IntPtr.Zero) __result0 = null;
+            else if (global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.ModuleDescription) global::VideoLAN.LibVLC.ModuleDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.ModuleDescription.__CreateInstance(__ret);
+            return __result0;
+        }
 
         /// <summary>
         /// <para>Return the current time as defined by LibVLC. The unit is the microsecond.</para>

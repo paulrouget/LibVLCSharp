@@ -839,22 +839,22 @@ namespace VideoLAN.LibVLC
     /// </summary>
     public unsafe partial class AudioOutputDescription : IDisposable
     {
-        [StructLayout(LayoutKind.Sequential)]
-        public partial struct Internal
+        [StructLayout(LayoutKind.Explicit, Size = 24)]
+        public partial struct __Internal
         {
-            internal IntPtr psz_name;
+            [FieldOffset(0)]
+            internal global::System.IntPtr psz_name;
 
-            internal IntPtr psz_description;
+            [FieldOffset(8)]
+            internal global::System.IntPtr psz_description;
 
-            internal IntPtr p_next;
+            [FieldOffset(16)]
+            internal global::System.IntPtr p_next;
 
             [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="??0libvlc_audio_output_t@@QEAA@AEBU0@@Z")]
             internal static extern global::System.IntPtr cctor(global::System.IntPtr instance, global::System.IntPtr _0);
-
-       
-
         }
 
         public global::System.IntPtr __Instance { get; protected set; }
@@ -870,19 +870,19 @@ namespace VideoLAN.LibVLC
             return new global::VideoLAN.LibVLC.AudioOutputDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.AudioOutputDescription __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDescription.Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDescription __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native, bool skipVTables = false)
         {
             return new global::VideoLAN.LibVLC.AudioOutputDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDescription.Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.Internal));
-            *(global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
+            *(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private AudioOutputDescription(global::VideoLAN.LibVLC.AudioOutputDescription.Internal native, bool skipVTables = false)
+        private AudioOutputDescription(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -898,20 +898,19 @@ namespace VideoLAN.LibVLC
 
         public AudioOutputDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
         public AudioOutputDescription(global::VideoLAN.LibVLC.AudioOutputDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance) = *((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) _0.__Instance);
         }
 
-      
         public void Dispose()
         {
             Dispose(disposing: true);
@@ -921,7 +920,6 @@ namespace VideoLAN.LibVLC
         {
             if (__Instance == IntPtr.Zero)
                 return;
-
             global::VideoLAN.LibVLC.AudioOutputDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
@@ -930,25 +928,25 @@ namespace VideoLAN.LibVLC
         }
 
         //public string Name => Marshal.PtrToStringAnsi(((Internal *) __Instance)->psz_name);
-        public string Name => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((Internal *) __Instance)->psz_name);
+        public string Name => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((__Internal *) __Instance)->psz_name);
       
-        public string Description => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((Internal*)__Instance)->psz_description);
+        public string Description => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((__Internal*)__Instance)->psz_description);
       
         public AudioOutputDescription Next
         {
             get
             {
                 global::VideoLAN.LibVLC.AudioOutputDescription __result0;
-                if (((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
-                else if (global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance)->p_next))
-                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDescription) global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance)->p_next];
-                else __result0 = global::VideoLAN.LibVLC.AudioOutputDescription.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance)->p_next);
+                if (((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDescription) global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.AudioOutputDescription.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.AudioOutputDescription.Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
+                ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
     }
@@ -957,16 +955,16 @@ namespace VideoLAN.LibVLC
     public unsafe partial class AudioOutputDevice : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 24)]
-        public partial struct Internal
+        public partial struct __Internal
         {
             [FieldOffset(0)]
-            internal IntPtr p_next;
+            internal global::System.IntPtr p_next;
 
             [FieldOffset(8)]
-            internal IntPtr psz_device;
+            internal global::System.IntPtr psz_device;
 
             [FieldOffset(16)]
-            internal IntPtr psz_description;
+            internal global::System.IntPtr psz_description;
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -974,7 +972,7 @@ namespace VideoLAN.LibVLC
             internal static extern global::System.IntPtr cctor(global::System.IntPtr instance, global::System.IntPtr _0);
         }
 
-        public IntPtr NativeReference { get; protected set; }
+        public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
         internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDevice> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDevice>();
@@ -987,45 +985,45 @@ namespace VideoLAN.LibVLC
             return new global::VideoLAN.LibVLC.AudioOutputDevice(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.AudioOutputDevice __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDevice.Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDevice __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native, bool skipVTables = false)
         {
             return new global::VideoLAN.LibVLC.AudioOutputDevice(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDevice.Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.Internal));
-            *(global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
+            *(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private AudioOutputDevice(global::VideoLAN.LibVLC.AudioOutputDevice.Internal native, bool skipVTables = false)
+        private AudioOutputDevice(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
+            NativeToManagedMap[__Instance] = this;
         }
 
         protected AudioOutputDevice(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
-            NativeReference = new global::System.IntPtr(native);
+            __Instance = new global::System.IntPtr(native);
         }
 
         public AudioOutputDevice()
         {
-            NativeReference = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
+            NativeToManagedMap[__Instance] = this;
         }
 
         public AudioOutputDevice(global::VideoLAN.LibVLC.AudioOutputDevice _0)
         {
-            NativeReference = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
-            *((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference) = *((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) _0.NativeReference);
+            NativeToManagedMap[__Instance] = this;
+            *((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1035,36 +1033,36 @@ namespace VideoLAN.LibVLC
 
         public virtual void Dispose(bool disposing)
         {
-            if (NativeReference == IntPtr.Zero)
+            if (__Instance == IntPtr.Zero)
                 return;
             global::VideoLAN.LibVLC.AudioOutputDevice __dummy;
-            NativeToManagedMap.TryRemove(NativeReference, out __dummy);
+            NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(NativeReference);
-            NativeReference = IntPtr.Zero;
+                Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
         }
-        
-        public AudioOutputDevice Next
+
+        public global::VideoLAN.LibVLC.AudioOutputDevice PNext
         {
             get
             {
                 global::VideoLAN.LibVLC.AudioOutputDevice __result0;
-                if (((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference)->p_next == IntPtr.Zero) __result0 = null;
-                else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference)->p_next))
-                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference)->p_next];
-                else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference)->p_next);
+                if (((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.AudioOutputDevice.Internal*) NativeReference)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.NativeReference;
+                ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
 
-        public string Device => (string) Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((Internal*) NativeReference)->psz_device);
+        public string Device => (string) Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((__Internal*) __Instance)->psz_device);
 
-        public string Description => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((Internal*)NativeReference)->psz_description);
+        public string Description => (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(((__Internal*)__Instance)->psz_description);
     }
 
     /// <summary>Viewpoint for video outputs</summary>
@@ -1719,7 +1717,10 @@ namespace VideoLAN.LibVLC
                 EntryPoint="libvlc_audio_output_list_get")]
             internal static extern global::System.IntPtr LibvlcAudioOutputListGet(global::System.IntPtr p_instance);
 
-         
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_audio_output_list_release")]
+            internal static extern void LibvlcAudioOutputListRelease(global::System.IntPtr p_list);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -1731,8 +1732,15 @@ namespace VideoLAN.LibVLC
                 EntryPoint="libvlc_audio_output_device_enum")]
             internal static extern global::System.IntPtr LibvlcAudioOutputDeviceEnum(global::System.IntPtr mp);
 
-            
-           
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_audio_output_device_list_get")]
+            internal static extern global::System.IntPtr LibvlcAudioOutputDeviceListGet(global::System.IntPtr p_instance, [MarshalAs(UnmanagedType.LPStr)] string aout);
+
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
+                EntryPoint="libvlc_audio_output_device_list_release")]
+            internal static extern void LibvlcAudioOutputDeviceListRelease(global::System.IntPtr p_list);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -1888,7 +1896,7 @@ namespace VideoLAN.LibVLC
         /// <returns>a new media player object, or NULL on error.</returns>
         public static global::VideoLAN.LibVLC.MediaPlayer LibvlcMediaPlayerNew(global::VideoLAN.LibVLC.Instance p_libvlc_instance)
         {
-            var __arg0 = ReferenceEquals(p_libvlc_instance, null) ? global::System.IntPtr.Zero : p_libvlc_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_libvlc_instance, null) ? global::System.IntPtr.Zero : p_libvlc_instance.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerNew(__arg0);
             global::VideoLAN.LibVLC.MediaPlayer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -3271,7 +3279,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static global::VideoLAN.LibVLC.AudioOutputDescription LibvlcAudioOutputListGet(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputListGet(__arg0);
             global::VideoLAN.LibVLC.AudioOutputDescription __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -3281,7 +3289,14 @@ namespace VideoLAN.LibVLC
             return __result0;
         }
 
-    
+        /// <summary>Frees the list of available audio output modules.</summary>
+        /// <param name="p_list">list with audio outputs for release</param>
+        public static void LibvlcAudioOutputListRelease(global::VideoLAN.LibVLC.AudioOutputDescription p_list)
+        {
+            var __arg0 = ReferenceEquals(p_list, null) ? global::System.IntPtr.Zero : p_list.__Instance;
+            __Internal.LibvlcAudioOutputListRelease(__arg0);
+        }
+
         /// <summary>Selects an audio output module.</summary>
         /// <param name="p_mi">media player</param>
         /// <param name="psz_name">
@@ -3328,7 +3343,49 @@ namespace VideoLAN.LibVLC
             else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(__ret);
             return __result0;
         }
-        
+
+        /// <summary>Gets a list of audio output devices for a given audio output module,</summary>
+        /// <param name="p_instance">libvlc instance</param>
+        /// <param name="aout">
+        /// <para>audio output name</para>
+        /// <para>(as returned by libvlc_audio_output_list_get())</para>
+        /// </param>
+        /// <returns>
+        /// <para>A NULL-terminated linked list of potential audio output devices.</para>
+        /// <para>It must be freed with libvlc_audio_output_device_list_release()</para>
+        /// </returns>
+        /// <remarks>
+        /// <para>libvlc_audio_output_device_set().</para>
+        /// <para>Not all audio outputs support this. In particular, an empty (NULL)</para>
+        /// <para>list of devices doesnotimply that the specified audio output does</para>
+        /// <para>not work.</para>
+        /// <para>The list might not be exhaustive.</para>
+        /// <para>Some audio output devices in the list might not actually work in</para>
+        /// <para>some circumstances. By default, it is recommended to not specify any</para>
+        /// <para>explicit audio device.</para>
+        /// <para>LibVLC 2.1.0 or later.</para>
+        /// </remarks>
+        public static global::VideoLAN.LibVLC.AudioOutputDevice LibvlcAudioOutputDeviceListGet(global::VideoLAN.LibVLC.Instance p_instance, string aout)
+        {
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
+            var __ret = __Internal.LibvlcAudioOutputDeviceListGet(__arg0, aout);
+            global::VideoLAN.LibVLC.AudioOutputDevice __result0;
+            if (__ret == IntPtr.Zero) __result0 = null;
+            else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(__ret);
+            return __result0;
+        }
+
+        /// <summary>Frees a list of available audio output devices.</summary>
+        /// <param name="p_list">list with audio outputs for release</param>
+        /// <remarks>LibVLC 2.1.0 or later.</remarks>
+        public static void LibvlcAudioOutputDeviceListRelease(global::VideoLAN.LibVLC.AudioOutputDevice p_list)
+        {
+            var __arg0 = ReferenceEquals(p_list, null) ? global::System.IntPtr.Zero : p_list.__Instance;
+            __Internal.LibvlcAudioOutputDeviceListRelease(__arg0);
+        }
+
         /// <summary>Configures an explicit audio output device.</summary>
         /// <param name="mp">media player</param>
         /// <param name="module">

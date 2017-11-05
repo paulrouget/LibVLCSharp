@@ -360,7 +360,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static global::VideoLAN.LibVLC.RendererDiscoverer LibvlcRendererDiscovererNew(global::VideoLAN.LibVLC.Instance p_inst, string psz_name)
         {
-            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.NativeReference;
+            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.__Instance;
             var __ret = __Internal.LibvlcRendererDiscovererNew(__arg0, psz_name);
             global::VideoLAN.LibVLC.RendererDiscoverer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -444,7 +444,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static ulong LibvlcRendererDiscovererListGet(global::VideoLAN.LibVLC.Instance p_inst, global::VideoLAN.LibVLC.RendererDiscovererDescription ppp_services)
         {
-            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.NativeReference;
+            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.__Instance;
             var __arg1 = ReferenceEquals(ppp_services, null) ? global::System.IntPtr.Zero : ppp_services.__Instance;
             var __ret = __Internal.LibvlcRendererDiscovererListGet(__arg0, __arg1);
             return __ret;

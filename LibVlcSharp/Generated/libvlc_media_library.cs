@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>
     /// <para>@{</para>
@@ -25,29 +25,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.LibvlcMediaLibraryT> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.LibvlcMediaLibraryT>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.LibvlcMediaLibraryT __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.LibvlcMediaLibraryT(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT __CreateInstance(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.LibvlcMediaLibraryT __CreateInstance(global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT(native, skipVTables);
+            return new global::VideoLAN.LibVLC.LibvlcMediaLibraryT(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__Internal));
+            *(global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private LibvlcMediaLibraryT(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__Internal native, bool skipVTables = false)
+        private LibvlcMediaLibraryT(global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -95,15 +95,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Create an new Media Library object</summary>
         /// <param name="p_instance">the libvlc instance</param>
         /// <returns>a new object or NULL on error</returns>
-        public static global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT LibvlcMediaLibraryNew(global::VideoLAN.LibVLC.Generated.Instance p_instance)
+        public static global::VideoLAN.LibVLC.LibvlcMediaLibraryT LibvlcMediaLibraryNew(global::VideoLAN.LibVLC.Instance p_instance)
         {
             var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaLibraryNew(__arg0);
-            global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT __result0;
+            global::VideoLAN.LibVLC.LibvlcMediaLibraryT __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT) global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.LibvlcMediaLibraryT.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.LibvlcMediaLibraryT) global::VideoLAN.LibVLC.LibvlcMediaLibraryT.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.LibvlcMediaLibraryT.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -113,7 +113,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>then the object will be released.</para>
         /// </summary>
         /// <param name="p_mlib">media library object</param>
-        public static void LibvlcMediaLibraryRelease(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT p_mlib)
+        public static void LibvlcMediaLibraryRelease(global::VideoLAN.LibVLC.LibvlcMediaLibraryT p_mlib)
         {
             var __arg0 = ReferenceEquals(p_mlib, null) ? global::System.IntPtr.Zero : p_mlib.__Instance;
             __Internal.LibvlcMediaLibraryRelease(__arg0);
@@ -125,7 +125,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_media_library_release() to decrement the reference count.</para>
         /// </summary>
         /// <param name="p_mlib">media library object</param>
-        public static void LibvlcMediaLibraryRetain(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT p_mlib)
+        public static void LibvlcMediaLibraryRetain(global::VideoLAN.LibVLC.LibvlcMediaLibraryT p_mlib)
         {
             var __arg0 = ReferenceEquals(p_mlib, null) ? global::System.IntPtr.Zero : p_mlib.__Instance;
             __Internal.LibvlcMediaLibraryRetain(__arg0);
@@ -134,7 +134,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Load media library.</summary>
         /// <param name="p_mlib">media library object</param>
         /// <returns>0 on success, -1 on error</returns>
-        public static int LibvlcMediaLibraryLoad(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT p_mlib)
+        public static int LibvlcMediaLibraryLoad(global::VideoLAN.LibVLC.LibvlcMediaLibraryT p_mlib)
         {
             var __arg0 = ReferenceEquals(p_mlib, null) ? global::System.IntPtr.Zero : p_mlib.__Instance;
             var __ret = __Internal.LibvlcMediaLibraryLoad(__arg0);
@@ -144,15 +144,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get media library subitems.</summary>
         /// <param name="p_mlib">media library object</param>
         /// <returns>media list subitems</returns>
-        public static global::VideoLAN.LibVLC.Generated.MediaList LibvlcMediaLibraryMediaList(global::VideoLAN.LibVLC.Generated.LibvlcMediaLibraryT p_mlib)
+        public static global::VideoLAN.LibVLC.MediaList LibvlcMediaLibraryMediaList(global::VideoLAN.LibVLC.LibvlcMediaLibraryT p_mlib)
         {
             var __arg0 = ReferenceEquals(p_mlib, null) ? global::System.IntPtr.Zero : p_mlib.__Instance;
             var __ret = __Internal.LibvlcMediaLibraryMediaList(__arg0);
-            global::VideoLAN.LibVLC.Generated.MediaList __result0;
+            global::VideoLAN.LibVLC.MediaList __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.MediaList.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.MediaList) global::VideoLAN.LibVLC.Generated.MediaList.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.MediaList.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.MediaList.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.MediaList) global::VideoLAN.LibVLC.MediaList.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.MediaList.__CreateInstance(__ret);
             return __result0;
         }
     }

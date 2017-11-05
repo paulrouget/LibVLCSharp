@@ -101,7 +101,7 @@ namespace VideoLAN.LibVLC
         /// <returns>empty media list, or NULL on error</returns>
         public static global::VideoLAN.LibVLC.MediaList LibvlcMediaListNew(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaListNew(__arg0);
             global::VideoLAN.LibVLC.MediaList __result0;
             if (__ret == IntPtr.Zero) __result0 = null;

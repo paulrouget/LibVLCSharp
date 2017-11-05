@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>Description for titles</summary>
     public enum Title
@@ -349,29 +349,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.MediaPlayer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.MediaPlayer>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.MediaPlayer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.MediaPlayer>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.MediaPlayer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.MediaPlayer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.MediaPlayer(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.MediaPlayer(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.MediaPlayer __CreateInstance(global::VideoLAN.LibVLC.Generated.MediaPlayer.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.MediaPlayer __CreateInstance(global::VideoLAN.LibVLC.MediaPlayer.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.MediaPlayer(native, skipVTables);
+            return new global::VideoLAN.LibVLC.MediaPlayer(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.MediaPlayer.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.MediaPlayer.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.MediaPlayer.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.MediaPlayer.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.MediaPlayer.__Internal));
+            *(global::VideoLAN.LibVLC.MediaPlayer.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private MediaPlayer(global::VideoLAN.LibVLC.Generated.MediaPlayer.__Internal native, bool skipVTables = false)
+        private MediaPlayer(global::VideoLAN.LibVLC.MediaPlayer.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -396,29 +396,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.Equalizer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.Equalizer>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Equalizer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Equalizer>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.Equalizer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.Equalizer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.Equalizer(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.Equalizer(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.Equalizer __CreateInstance(global::VideoLAN.LibVLC.Generated.Equalizer.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.Equalizer __CreateInstance(global::VideoLAN.LibVLC.Equalizer.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.Equalizer(native, skipVTables);
+            return new global::VideoLAN.LibVLC.Equalizer(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.Equalizer.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.Equalizer.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.Equalizer.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.Equalizer.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Equalizer.__Internal));
+            *(global::VideoLAN.LibVLC.Equalizer.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private Equalizer(global::VideoLAN.LibVLC.Generated.Equalizer.__Internal native, bool skipVTables = false)
+        private Equalizer(global::VideoLAN.LibVLC.Equalizer.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -460,29 +460,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.TrackDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.TrackDescription>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.TrackDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.TrackDescription>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.TrackDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.TrackDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.TrackDescription(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.TrackDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.TrackDescription __CreateInstance(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.TrackDescription __CreateInstance(global::VideoLAN.LibVLC.TrackDescription.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.TrackDescription(native, skipVTables);
+            return new global::VideoLAN.LibVLC.TrackDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.TrackDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TrackDescription.__Internal));
+            *(global::VideoLAN.LibVLC.TrackDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private TrackDescription(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal native, bool skipVTables = false)
+        private TrackDescription(global::VideoLAN.LibVLC.TrackDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -498,17 +498,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public TrackDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TrackDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public TrackDescription(global::VideoLAN.LibVLC.Generated.TrackDescription _0)
+        public TrackDescription(global::VideoLAN.LibVLC.TrackDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TrackDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.TrackDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -520,7 +520,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.TrackDescription __dummy;
+            global::VideoLAN.LibVLC.TrackDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -531,12 +531,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->i_id;
+                return ((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->i_id;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->i_id = value;
+                ((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->i_id = value;
             }
         }
 
@@ -544,30 +544,30 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->psz_name;
+                return (sbyte*) ((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->psz_name;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
             }
         }
 
-        public global::VideoLAN.LibVLC.Generated.TrackDescription PNext
+        public global::VideoLAN.LibVLC.TrackDescription PNext
         {
             get
             {
-                global::VideoLAN.LibVLC.Generated.TrackDescription __result0;
-                if (((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
-                else if (global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->p_next))
-                    __result0 = (global::VideoLAN.LibVLC.Generated.TrackDescription) global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->p_next];
-                else __result0 = global::VideoLAN.LibVLC.Generated.TrackDescription.__CreateInstance(((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->p_next);
+                global::VideoLAN.LibVLC.TrackDescription __result0;
+                if (((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.TrackDescription) global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.TrackDescription.__CreateInstance(((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TrackDescription.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
+                ((global::VideoLAN.LibVLC.TrackDescription.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
     }
@@ -595,29 +595,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.TitleDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.TitleDescription>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.TitleDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.TitleDescription>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.TitleDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.TitleDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.TitleDescription(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.TitleDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.TitleDescription __CreateInstance(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.TitleDescription __CreateInstance(global::VideoLAN.LibVLC.TitleDescription.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.TitleDescription(native, skipVTables);
+            return new global::VideoLAN.LibVLC.TitleDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.TitleDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TitleDescription.__Internal));
+            *(global::VideoLAN.LibVLC.TitleDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private TitleDescription(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal native, bool skipVTables = false)
+        private TitleDescription(global::VideoLAN.LibVLC.TitleDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -633,17 +633,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public TitleDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TitleDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public TitleDescription(global::VideoLAN.LibVLC.Generated.TitleDescription _0)
+        public TitleDescription(global::VideoLAN.LibVLC.TitleDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.TitleDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.TitleDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -655,7 +655,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.TitleDescription __dummy;
+            global::VideoLAN.LibVLC.TitleDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -666,12 +666,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->i_duration;
+                return ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->i_duration;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->i_duration = value;
+                ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->i_duration = value;
             }
         }
 
@@ -679,12 +679,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->psz_name;
+                return (sbyte*) ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->psz_name;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
             }
         }
 
@@ -692,12 +692,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->i_flags;
+                return ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->i_flags;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.TitleDescription.__Internal*) __Instance)->i_flags = value;
+                ((global::VideoLAN.LibVLC.TitleDescription.__Internal*) __Instance)->i_flags = value;
             }
         }
     }
@@ -726,29 +726,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.ChapterDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.ChapterDescription>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.ChapterDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.ChapterDescription>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.ChapterDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.ChapterDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.ChapterDescription(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.ChapterDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.ChapterDescription __CreateInstance(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.ChapterDescription __CreateInstance(global::VideoLAN.LibVLC.ChapterDescription.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.ChapterDescription(native, skipVTables);
+            return new global::VideoLAN.LibVLC.ChapterDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.ChapterDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ChapterDescription.__Internal));
+            *(global::VideoLAN.LibVLC.ChapterDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private ChapterDescription(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal native, bool skipVTables = false)
+        private ChapterDescription(global::VideoLAN.LibVLC.ChapterDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -764,17 +764,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public ChapterDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ChapterDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public ChapterDescription(global::VideoLAN.LibVLC.Generated.ChapterDescription _0)
+        public ChapterDescription(global::VideoLAN.LibVLC.ChapterDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.ChapterDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -786,7 +786,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.ChapterDescription __dummy;
+            global::VideoLAN.LibVLC.ChapterDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -797,12 +797,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->i_time_offset;
+                return ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->i_time_offset;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->i_time_offset = value;
+                ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->i_time_offset = value;
             }
         }
 
@@ -810,12 +810,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->i_duration;
+                return ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->i_duration;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->i_duration = value;
+                ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->i_duration = value;
             }
         }
 
@@ -823,12 +823,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->psz_name;
+                return (sbyte*) ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->psz_name;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.ChapterDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.ChapterDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
             }
         }
     }
@@ -837,7 +837,7 @@ namespace VideoLAN.LibVLC.Generated
     /// <para>Description for audio output. It contains</para>
     /// <para>name, description and pointer to next record.</para>
     /// </summary>
-    public unsafe partial class AudioOutput : IDisposable
+    public unsafe partial class AudioOutputDescription : IDisposable
     {
         [StructLayout(LayoutKind.Explicit, Size = 24)]
         public partial struct __Internal
@@ -860,55 +860,55 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.AudioOutput> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.AudioOutput>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDescription>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.AudioOutput __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.AudioOutput(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.AudioOutputDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.AudioOutput __CreateInstance(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDescription __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.AudioOutput(native, skipVTables);
+            return new global::VideoLAN.LibVLC.AudioOutputDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
+            *(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private AudioOutput(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal native, bool skipVTables = false)
+        private AudioOutputDescription(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        protected AudioOutput(void* native, bool skipVTables = false)
+        protected AudioOutputDescription(void* native, bool skipVTables = false)
         {
             if (native == null)
                 return;
             __Instance = new global::System.IntPtr(native);
         }
 
-        public AudioOutput()
+        public AudioOutputDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public AudioOutput(global::VideoLAN.LibVLC.Generated.AudioOutput _0)
+        public AudioOutputDescription(global::VideoLAN.LibVLC.AudioOutputDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -920,7 +920,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.AudioOutput __dummy;
+            global::VideoLAN.LibVLC.AudioOutputDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -931,12 +931,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->psz_name;
+                return (sbyte*) ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->psz_name;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
             }
         }
 
@@ -944,30 +944,30 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->psz_description;
+                return (sbyte*) ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->psz_description;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->psz_description = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->psz_description = (global::System.IntPtr) value;
             }
         }
 
-        public global::VideoLAN.LibVLC.Generated.AudioOutput PNext
+        public global::VideoLAN.LibVLC.AudioOutputDescription PNext
         {
             get
             {
-                global::VideoLAN.LibVLC.Generated.AudioOutput __result0;
-                if (((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
-                else if (global::VideoLAN.LibVLC.Generated.AudioOutput.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->p_next))
-                    __result0 = (global::VideoLAN.LibVLC.Generated.AudioOutput) global::VideoLAN.LibVLC.Generated.AudioOutput.NativeToManagedMap[((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->p_next];
-                else __result0 = global::VideoLAN.LibVLC.Generated.AudioOutput.__CreateInstance(((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->p_next);
+                global::VideoLAN.LibVLC.AudioOutputDescription __result0;
+                if (((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDescription) global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.AudioOutputDescription.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutput.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
+                ((global::VideoLAN.LibVLC.AudioOutputDescription.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
     }
@@ -996,29 +996,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.AudioOutputDevice> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.AudioOutputDevice>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDevice> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.AudioOutputDevice>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.AudioOutputDevice __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDevice __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.AudioOutputDevice(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.AudioOutputDevice(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.AudioOutputDevice __CreateInstance(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.AudioOutputDevice __CreateInstance(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.AudioOutputDevice(native, skipVTables);
+            return new global::VideoLAN.LibVLC.AudioOutputDevice(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
+            *(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private AudioOutputDevice(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal native, bool skipVTables = false)
+        private AudioOutputDevice(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -1034,17 +1034,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public AudioOutputDevice()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public AudioOutputDevice(global::VideoLAN.LibVLC.Generated.AudioOutputDevice _0)
+        public AudioOutputDevice(global::VideoLAN.LibVLC.AudioOutputDevice _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.AudioOutputDevice.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1056,28 +1056,28 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.AudioOutputDevice __dummy;
+            global::VideoLAN.LibVLC.AudioOutputDevice __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
             __Instance = IntPtr.Zero;
         }
 
-        public global::VideoLAN.LibVLC.Generated.AudioOutputDevice PNext
+        public global::VideoLAN.LibVLC.AudioOutputDevice PNext
         {
             get
             {
-                global::VideoLAN.LibVLC.Generated.AudioOutputDevice __result0;
-                if (((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
-                else if (global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->p_next))
-                    __result0 = (global::VideoLAN.LibVLC.Generated.AudioOutputDevice) global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap[((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->p_next];
-                else __result0 = global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__CreateInstance(((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->p_next);
+                global::VideoLAN.LibVLC.AudioOutputDevice __result0;
+                if (((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next == IntPtr.Zero) __result0 = null;
+                else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next))
+                    __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next];
+                else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next);
                 return __result0;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
+                ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->p_next = ReferenceEquals(value, null) ? global::System.IntPtr.Zero : value.__Instance;
             }
         }
 
@@ -1085,12 +1085,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->psz_device;
+                return (sbyte*) ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->psz_device;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->psz_device = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->psz_device = (global::System.IntPtr) value;
             }
         }
 
@@ -1098,12 +1098,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->psz_description;
+                return (sbyte*) ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->psz_description;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__Internal*) __Instance)->psz_description = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.AudioOutputDevice.__Internal*) __Instance)->psz_description = (global::System.IntPtr) value;
             }
         }
     }
@@ -1136,29 +1136,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.VideoViewpoint> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.VideoViewpoint>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.VideoViewpoint> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.VideoViewpoint>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.VideoViewpoint __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.VideoViewpoint __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.VideoViewpoint(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.VideoViewpoint(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.VideoViewpoint __CreateInstance(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.VideoViewpoint __CreateInstance(global::VideoLAN.LibVLC.VideoViewpoint.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.VideoViewpoint(native, skipVTables);
+            return new global::VideoLAN.LibVLC.VideoViewpoint(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.VideoViewpoint.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.VideoViewpoint.__Internal));
+            *(global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private VideoViewpoint(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal native, bool skipVTables = false)
+        private VideoViewpoint(global::VideoLAN.LibVLC.VideoViewpoint.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -1174,17 +1174,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public VideoViewpoint()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.VideoViewpoint.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public VideoViewpoint(global::VideoLAN.LibVLC.Generated.VideoViewpoint _0)
+        public VideoViewpoint(global::VideoLAN.LibVLC.VideoViewpoint _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.VideoViewpoint.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -1196,7 +1196,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.VideoViewpoint __dummy;
+            global::VideoLAN.LibVLC.VideoViewpoint __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -1207,12 +1207,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_yaw;
+                return ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_yaw;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_yaw = value;
+                ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_yaw = value;
             }
         }
 
@@ -1220,12 +1220,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_pitch;
+                return ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_pitch;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_pitch = value;
+                ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_pitch = value;
             }
         }
 
@@ -1233,12 +1233,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_roll;
+                return ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_roll;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_roll = value;
+                ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_roll = value;
             }
         }
 
@@ -1246,12 +1246,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_field_of_view;
+                return ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_field_of_view;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.VideoViewpoint.__Internal*) __Instance)->f_field_of_view = value;
+                ((global::VideoLAN.LibVLC.VideoViewpoint.__Internal*) __Instance)->f_field_of_view = value;
             }
         }
     }
@@ -1488,7 +1488,7 @@ namespace VideoLAN.LibVLC.Generated
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_media_player_get_state")]
-            internal static extern global::VideoLAN.LibVLC.Generated.VLCState LibvlcMediaPlayerGetState(global::System.IntPtr p_mi);
+            internal static extern global::VideoLAN.LibVLC.VLCState LibvlcMediaPlayerGetState(global::System.IntPtr p_mi);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -1523,12 +1523,12 @@ namespace VideoLAN.LibVLC.Generated
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_media_player_set_video_title_display")]
-            internal static extern void LibvlcMediaPlayerSetVideoTitleDisplay(global::System.IntPtr p_mi, global::VideoLAN.LibVLC.Generated.Position position, uint timeout);
+            internal static extern void LibvlcMediaPlayerSetVideoTitleDisplay(global::System.IntPtr p_mi, global::VideoLAN.LibVLC.Position position, uint timeout);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_media_player_add_slave")]
-            internal static extern int LibvlcMediaPlayerAddSlave(global::System.IntPtr p_mi, global::VideoLAN.LibVLC.Generated.MediaSlaveType i_type, [MarshalAs(UnmanagedType.LPStr)] string psz_uri, bool b_select);
+            internal static extern int LibvlcMediaPlayerAddSlave(global::System.IntPtr p_mi, global::VideoLAN.LibVLC.MediaSlaveType i_type, [MarshalAs(UnmanagedType.LPStr)] string psz_uri, bool b_select);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -1937,15 +1937,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>should be created.</para>
         /// </param>
         /// <returns>a new media player object, or NULL on error.</returns>
-        public static global::VideoLAN.LibVLC.Generated.MediaPlayer LibvlcMediaPlayerNew(global::VideoLAN.LibVLC.Generated.Instance p_libvlc_instance)
+        public static global::VideoLAN.LibVLC.MediaPlayer LibvlcMediaPlayerNew(global::VideoLAN.LibVLC.Instance p_libvlc_instance)
         {
             var __arg0 = ReferenceEquals(p_libvlc_instance, null) ? global::System.IntPtr.Zero : p_libvlc_instance.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerNew(__arg0);
-            global::VideoLAN.LibVLC.Generated.MediaPlayer __result0;
+            global::VideoLAN.LibVLC.MediaPlayer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.MediaPlayer) global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.MediaPlayer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.MediaPlayer) global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.MediaPlayer.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -1955,15 +1955,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>destroyed.</para>
         /// </param>
         /// <returns>a new media player object, or NULL on error.</returns>
-        public static global::VideoLAN.LibVLC.Generated.MediaPlayer LibvlcMediaPlayerNewFromMedia(global::VideoLAN.LibVLC.Generated.Media p_md)
+        public static global::VideoLAN.LibVLC.MediaPlayer LibvlcMediaPlayerNewFromMedia(global::VideoLAN.LibVLC.Media p_md)
         {
             var __arg0 = ReferenceEquals(p_md, null) ? global::System.IntPtr.Zero : p_md.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerNewFromMedia(__arg0);
-            global::VideoLAN.LibVLC.Generated.MediaPlayer __result0;
+            global::VideoLAN.LibVLC.MediaPlayer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.MediaPlayer) global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.MediaPlayer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.MediaPlayer) global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.MediaPlayer.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -1975,7 +1975,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>has been released, then it should not be used again.</para>
         /// </summary>
         /// <param name="p_mi">the Media Player to free</param>
-        public static void LibvlcMediaPlayerRelease(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerRelease(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerRelease(__arg0);
@@ -1986,7 +1986,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_media_player_release() to decrement reference count.</para>
         /// </summary>
         /// <param name="p_mi">media player object</param>
-        public static void LibvlcMediaPlayerRetain(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerRetain(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerRetain(__arg0);
@@ -2001,7 +2001,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the Media. Afterwards the p_md can be safely</para>
         /// <para>destroyed.</para>
         /// </param>
-        public static void LibvlcMediaPlayerSetMedia(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.Media p_md)
+        public static void LibvlcMediaPlayerSetMedia(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.Media p_md)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg1 = ReferenceEquals(p_md, null) ? global::System.IntPtr.Zero : p_md.__Instance;
@@ -2014,37 +2014,37 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the media associated with p_mi, or NULL if no</para>
         /// <para>media is associated</para>
         /// </returns>
-        public static global::VideoLAN.LibVLC.Generated.Media LibvlcMediaPlayerGetMedia(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.Media LibvlcMediaPlayerGetMedia(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetMedia(__arg0);
-            global::VideoLAN.LibVLC.Generated.Media __result0;
+            global::VideoLAN.LibVLC.Media __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.Media.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.Media) global::VideoLAN.LibVLC.Generated.Media.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.Media.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.Media.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.Media) global::VideoLAN.LibVLC.Media.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.Media.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Get the Event Manager from which the media player send event.</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>the event manager associated with p_mi</returns>
-        public static global::VideoLAN.LibVLC.Generated.EventManager LibvlcMediaPlayerEventManager(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.EventManager LibvlcMediaPlayerEventManager(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerEventManager(__arg0);
-            global::VideoLAN.LibVLC.Generated.EventManager __result0;
+            global::VideoLAN.LibVLC.EventManager __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.EventManager) global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.EventManager.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.EventManager.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.EventManager) global::VideoLAN.LibVLC.EventManager.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.EventManager.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>is_playing</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>1 if the media player is playing, 0 otherwise</returns>
-        public static int LibvlcMediaPlayerIsPlaying(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerIsPlaying(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerIsPlaying(__arg0);
@@ -2054,7 +2054,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Play</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>0 if playback started (and was already started), or -1 on error.</returns>
-        public static int LibvlcMediaPlayerPlay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerPlay(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerPlay(__arg0);
@@ -2065,7 +2065,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="mp">the Media Player</param>
         /// <param name="do_pause">play/resume if zero, pause if non-zero</param>
         /// <remarks>LibVLC 1.1.1 or later</remarks>
-        public static void LibvlcMediaPlayerSetPause(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, int do_pause)
+        public static void LibvlcMediaPlayerSetPause(global::VideoLAN.LibVLC.MediaPlayer mp, int do_pause)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             __Internal.LibvlcMediaPlayerSetPause(__arg0, do_pause);
@@ -2073,7 +2073,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Toggle pause (no effect if there is no media)</summary>
         /// <param name="p_mi">the Media Player</param>
-        public static void LibvlcMediaPlayerPause(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerPause(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerPause(__arg0);
@@ -2081,7 +2081,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Stop (no effect if there is no media)</summary>
         /// <param name="p_mi">the Media Player</param>
-        public static void LibvlcMediaPlayerStop(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerStop(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerStop(__arg0);
@@ -2097,7 +2097,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_discoverer_new</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static int LibvlcMediaPlayerSetRenderer(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.RendererItem p_item)
+        public static int LibvlcMediaPlayerSetRenderer(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.RendererItem p_item)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg1 = ReferenceEquals(p_item, null) ? global::System.IntPtr.Zero : p_item.__Instance;
@@ -2139,7 +2139,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>application buffers (between lock and unlock callbacks).</para>
         /// <para>LibVLC 1.1.1 or later</para>
         /// </remarks>
-        public static void LibvlcVideoSetCallbacks(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, global::VideoLAN.LibVLC.Generated.LibvlcVideoLockCb @lock, global::VideoLAN.LibVLC.Generated.LibvlcVideoUnlockCb unlock, global::VideoLAN.LibVLC.Generated.LibvlcVideoDisplayCb display, global::System.IntPtr opaque)
+        public static void LibvlcVideoSetCallbacks(global::VideoLAN.LibVLC.MediaPlayer mp, global::VideoLAN.LibVLC.LibvlcVideoLockCb @lock, global::VideoLAN.LibVLC.LibvlcVideoUnlockCb unlock, global::VideoLAN.LibVLC.LibvlcVideoDisplayCb display, global::System.IntPtr opaque)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __arg1 = @lock == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(@lock);
@@ -2167,7 +2167,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>To use the YCbCr color space with chrominance subsampling,</para>
         /// <para>consider using libvlc_video_set_format_callbacks() instead.</para>
         /// </remarks>
-        public static void LibvlcVideoSetFormat(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, string chroma, uint width, uint height, uint pitch)
+        public static void LibvlcVideoSetFormat(global::VideoLAN.LibVLC.MediaPlayer mp, string chroma, uint width, uint height, uint pitch)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             __Internal.LibvlcVideoSetFormat(__arg0, chroma, width, height, pitch);
@@ -2181,7 +2181,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="setup">callback to select the video format (cannot be NULL)</param>
         /// <param name="cleanup">callback to release any allocated resources (or NULL)</param>
         /// <remarks>LibVLC 2.0.0 or later</remarks>
-        public static void LibvlcVideoSetFormatCallbacks(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, global::VideoLAN.LibVLC.Generated.LibvlcVideoFormatCb setup, global::VideoLAN.LibVLC.Generated.LibvlcVideoCleanupCb cleanup)
+        public static void LibvlcVideoSetFormatCallbacks(global::VideoLAN.LibVLC.MediaPlayer mp, global::VideoLAN.LibVLC.LibvlcVideoFormatCb setup, global::VideoLAN.LibVLC.LibvlcVideoCleanupCb cleanup)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __arg1 = setup == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(setup);
@@ -2204,7 +2204,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the following code should work:</para>
         /// <para>You can find a live example in VLCVideoView in VLCKit.framework.</para>
         /// </remarks>
-        public static void LibvlcMediaPlayerSetNsobject(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::System.IntPtr drawable)
+        public static void LibvlcMediaPlayerSetNsobject(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::System.IntPtr drawable)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetNsobject(__arg0, drawable);
@@ -2213,7 +2213,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the NSView handler previously set with libvlc_media_player_set_nsobject().</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>the NSView handler or 0 if none where set</returns>
-        public static global::System.IntPtr LibvlcMediaPlayerGetNsobject(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::System.IntPtr LibvlcMediaPlayerGetNsobject(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetNsobject(__arg0);
@@ -2252,7 +2252,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>will be rendered into external windows beyond the control of the</para>
         /// <para>application.</para>
         /// </remarks>
-        public static void LibvlcMediaPlayerSetXwindow(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint drawable)
+        public static void LibvlcMediaPlayerSetXwindow(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint drawable)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetXwindow(__arg0, drawable);
@@ -2266,7 +2266,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>an X window ID, or 0 if none where set.</returns>
-        public static uint LibvlcMediaPlayerGetXwindow(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static uint LibvlcMediaPlayerGetXwindow(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetXwindow(__arg0);
@@ -2280,7 +2280,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <param name="p_mi">the Media Player</param>
         /// <param name="drawable">windows handle of the drawable</param>
-        public static void LibvlcMediaPlayerSetHwnd(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::System.IntPtr drawable)
+        public static void LibvlcMediaPlayerSetHwnd(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::System.IntPtr drawable)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetHwnd(__arg0, drawable);
@@ -2293,7 +2293,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>a window handle or NULL if there are none.</returns>
-        public static global::System.IntPtr LibvlcMediaPlayerGetHwnd(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::System.IntPtr LibvlcMediaPlayerGetHwnd(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetHwnd(__arg0);
@@ -2307,7 +2307,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>org.videolan.libvlc.MediaPlayer class from the libvlc-android project.</para>
         /// </param>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static void LibvlcMediaPlayerSetAndroidContext(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::System.IntPtr p_awindow_handler)
+        public static void LibvlcMediaPlayerSetAndroidContext(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::System.IntPtr p_awindow_handler)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetAndroidContext(__arg0, p_awindow_handler);
@@ -2318,7 +2318,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_evas_object">a valid EFL Evas Object (Evas_Object)</param>
         /// <returns>-1 if an error was detected, 0 otherwise.</returns>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static int LibvlcMediaPlayerSetEvasObject(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::System.IntPtr p_evas_object)
+        public static int LibvlcMediaPlayerSetEvasObject(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::System.IntPtr p_evas_object)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerSetEvasObject(__arg0, p_evas_object);
@@ -2340,7 +2340,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>If the callbacks are set, LibVLC willnotoutput audio in any way.</para>
         /// <para>LibVLC 2.0.0 or later</para>
         /// </remarks>
-        public static void LibvlcAudioSetCallbacks(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, global::VideoLAN.LibVLC.Generated.LibvlcAudioPlayCb play, global::VideoLAN.LibVLC.Generated.LibvlcAudioPauseCb pause, global::VideoLAN.LibVLC.Generated.LibvlcAudioResumeCb resume, global::VideoLAN.LibVLC.Generated.LibvlcAudioFlushCb flush, global::VideoLAN.LibVLC.Generated.LibvlcAudioDrainCb drain, global::System.IntPtr opaque)
+        public static void LibvlcAudioSetCallbacks(global::VideoLAN.LibVLC.MediaPlayer mp, global::VideoLAN.LibVLC.LibvlcAudioPlayCb play, global::VideoLAN.LibVLC.LibvlcAudioPauseCb pause, global::VideoLAN.LibVLC.LibvlcAudioResumeCb resume, global::VideoLAN.LibVLC.LibvlcAudioFlushCb flush, global::VideoLAN.LibVLC.LibvlcAudioDrainCb drain, global::System.IntPtr opaque)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __arg1 = play == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(play);
@@ -2363,7 +2363,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>or NULL to apply volume in software</para>
         /// </param>
         /// <remarks>LibVLC 2.0.0 or later</remarks>
-        public static void LibvlcAudioSetVolumeCallback(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, global::VideoLAN.LibVLC.Generated.LibvlcAudioSetVolumeCb set_volume)
+        public static void LibvlcAudioSetVolumeCallback(global::VideoLAN.LibVLC.MediaPlayer mp, global::VideoLAN.LibVLC.LibvlcAudioSetVolumeCb set_volume)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __arg1 = set_volume == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(set_volume);
@@ -2378,7 +2378,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>This only works in combination with libvlc_audio_set_callbacks().</para>
         /// <para>LibVLC 2.0.0 or later</para>
         /// </remarks>
-        public static void LibvlcAudioSetFormatCallbacks(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, global::VideoLAN.LibVLC.Generated.LibvlcAudioSetupCb setup, global::VideoLAN.LibVLC.Generated.LibvlcAudioCleanupCb cleanup)
+        public static void LibvlcAudioSetFormatCallbacks(global::VideoLAN.LibVLC.MediaPlayer mp, global::VideoLAN.LibVLC.LibvlcAudioSetupCb setup, global::VideoLAN.LibVLC.LibvlcAudioCleanupCb cleanup)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __arg1 = setup == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(setup);
@@ -2399,7 +2399,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>and is mutually exclusive with libvlc_audio_set_format_callbacks().</para>
         /// <para>LibVLC 2.0.0 or later</para>
         /// </remarks>
-        public static void LibvlcAudioSetFormat(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, string format, uint rate, uint channels)
+        public static void LibvlcAudioSetFormat(global::VideoLAN.LibVLC.MediaPlayer mp, string format, uint rate, uint channels)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             __Internal.LibvlcAudioSetFormat(__arg0, format, rate, channels);
@@ -2408,7 +2408,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the current movie length (in ms).</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>the movie length (in ms), or -1 if there is no media.</returns>
-        public static long LibvlcMediaPlayerGetLength(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static long LibvlcMediaPlayerGetLength(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetLength(__arg0);
@@ -2418,7 +2418,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the current movie time (in ms).</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>the movie time (in ms), or -1 if there is no media.</returns>
-        public static long LibvlcMediaPlayerGetTime(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static long LibvlcMediaPlayerGetTime(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetTime(__arg0);
@@ -2431,7 +2431,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <param name="p_mi">the Media Player</param>
         /// <param name="i_time">the movie time (in ms).</param>
-        public static void LibvlcMediaPlayerSetTime(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, long i_time)
+        public static void LibvlcMediaPlayerSetTime(global::VideoLAN.LibVLC.MediaPlayer p_mi, long i_time)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetTime(__arg0, i_time);
@@ -2440,7 +2440,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get movie position as percentage between 0.0 and 1.0.</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>movie position, or -1. in case of error</returns>
-        public static float LibvlcMediaPlayerGetPosition(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static float LibvlcMediaPlayerGetPosition(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetPosition(__arg0);
@@ -2454,7 +2454,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <param name="p_mi">the Media Player</param>
         /// <param name="f_pos">the position</param>
-        public static void LibvlcMediaPlayerSetPosition(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, float f_pos)
+        public static void LibvlcMediaPlayerSetPosition(global::VideoLAN.LibVLC.MediaPlayer p_mi, float f_pos)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetPosition(__arg0, f_pos);
@@ -2463,7 +2463,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Set movie chapter (if applicable).</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <param name="i_chapter">chapter number to play</param>
-        public static void LibvlcMediaPlayerSetChapter(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_chapter)
+        public static void LibvlcMediaPlayerSetChapter(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_chapter)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetChapter(__arg0, i_chapter);
@@ -2472,7 +2472,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get movie chapter.</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>chapter number currently playing, or -1 if there is no media.</returns>
-        public static int LibvlcMediaPlayerGetChapter(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerGetChapter(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetChapter(__arg0);
@@ -2482,7 +2482,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get movie chapter count</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>number of chapters in movie, or -1.</returns>
-        public static int LibvlcMediaPlayerGetChapterCount(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerGetChapterCount(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetChapterCount(__arg0);
@@ -2492,7 +2492,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Is the player able to play</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>boolean</returns>
-        public static int LibvlcMediaPlayerWillPlay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerWillPlay(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerWillPlay(__arg0);
@@ -2503,7 +2503,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the Media Player</param>
         /// <param name="i_title">title</param>
         /// <returns>number of chapters in title, or -1</returns>
-        public static int LibvlcMediaPlayerGetChapterCountForTitle(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_title)
+        public static int LibvlcMediaPlayerGetChapterCountForTitle(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_title)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetChapterCountForTitle(__arg0, i_title);
@@ -2513,7 +2513,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Set movie title</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <param name="i_title">title number to play</param>
-        public static void LibvlcMediaPlayerSetTitle(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_title)
+        public static void LibvlcMediaPlayerSetTitle(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_title)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetTitle(__arg0, i_title);
@@ -2522,7 +2522,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get movie title</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>title number currently playing, or -1</returns>
-        public static int LibvlcMediaPlayerGetTitle(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerGetTitle(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetTitle(__arg0);
@@ -2532,7 +2532,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get movie title count</summary>
         /// <param name="p_mi">the Media Player</param>
         /// <returns>title number count, or -1</returns>
-        public static int LibvlcMediaPlayerGetTitleCount(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerGetTitleCount(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetTitleCount(__arg0);
@@ -2541,7 +2541,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Set previous chapter (if applicable)</summary>
         /// <param name="p_mi">the Media Player</param>
-        public static void LibvlcMediaPlayerPreviousChapter(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerPreviousChapter(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerPreviousChapter(__arg0);
@@ -2549,7 +2549,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Set next chapter (if applicable)</summary>
         /// <param name="p_mi">the Media Player</param>
-        public static void LibvlcMediaPlayerNextChapter(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerNextChapter(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerNextChapter(__arg0);
@@ -2562,7 +2562,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>Depending on the underlying media, the requested rate may be</para>
         /// <para>different from the real playback rate.</para>
         /// </remarks>
-        public static float LibvlcMediaPlayerGetRate(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static float LibvlcMediaPlayerGetRate(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetRate(__arg0);
@@ -2576,7 +2576,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>-1 if an error was detected, 0 otherwise (but even then, it might</para>
         /// <para>not actually work depending on the underlying media protocol)</para>
         /// </returns>
-        public static int LibvlcMediaPlayerSetRate(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, float rate)
+        public static int LibvlcMediaPlayerSetRate(global::VideoLAN.LibVLC.MediaPlayer p_mi, float rate)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerSetRate(__arg0, rate);
@@ -2587,7 +2587,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the Media Player</param>
         /// <returns>the current state of the media player (playing, paused, ...)</returns>
         /// <remarks>libvlc_state_t</remarks>
-        public static global::VideoLAN.LibVLC.Generated.VLCState LibvlcMediaPlayerGetState(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.VLCState LibvlcMediaPlayerGetState(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetState(__arg0);
@@ -2597,7 +2597,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>How many video outputs does this media player have?</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>the number of video outputs</returns>
-        public static uint LibvlcMediaPlayerHasVout(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static uint LibvlcMediaPlayerHasVout(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerHasVout(__arg0);
@@ -2607,7 +2607,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Is this media player seekable?</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>true if the media player can seek</returns>
-        public static int LibvlcMediaPlayerIsSeekable(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerIsSeekable(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerIsSeekable(__arg0);
@@ -2617,7 +2617,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Can this media player be paused?</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>true if the media player can pause</returns>
-        public static int LibvlcMediaPlayerCanPause(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerCanPause(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerCanPause(__arg0);
@@ -2628,7 +2628,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the media player</param>
         /// <returns>true if the current program is scrambled</returns>
         /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static int LibvlcMediaPlayerProgramScrambled(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerProgramScrambled(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerProgramScrambled(__arg0);
@@ -2637,7 +2637,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Display the next frame (if supported)</summary>
         /// <param name="p_mi">the media player</param>
-        public static void LibvlcMediaPlayerNextFrame(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaPlayerNextFrame(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerNextFrame(__arg0);
@@ -2647,7 +2647,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the Media Player</param>
         /// <param name="navigate">the Navigation mode</param>
         /// <remarks>libVLC 2.0.0 or later</remarks>
-        public static void LibvlcMediaPlayerNavigate(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint navigate)
+        public static void LibvlcMediaPlayerNavigate(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint navigate)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerNavigate(__arg0, navigate);
@@ -2658,7 +2658,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="position">position at which to display the title, or libvlc_position_disable to prevent the title from being displayed</param>
         /// <param name="timeout">title display timeout in milliseconds (ignored if libvlc_position_disable)</param>
         /// <remarks>libVLC 2.1.0 or later</remarks>
-        public static void LibvlcMediaPlayerSetVideoTitleDisplay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.Position position, uint timeout)
+        public static void LibvlcMediaPlayerSetVideoTitleDisplay(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.Position position, uint timeout)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcMediaPlayerSetVideoTitleDisplay(__arg0, position, timeout);
@@ -2676,7 +2676,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>LibVLC 3.0.0 and later.</para>
         /// <para>libvlc_media_slaves_add</para>
         /// </remarks>
-        public static int LibvlcMediaPlayerAddSlave(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.MediaSlaveType i_type, string psz_uri, bool b_select)
+        public static int LibvlcMediaPlayerAddSlave(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.MediaSlaveType i_type, string psz_uri, bool b_select)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerAddSlave(__arg0, i_type, psz_uri, b_select);
@@ -2685,7 +2685,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Release (free) libvlc_track_description_t</summary>
         /// <param name="p_track_description">the structure to release</param>
-        public static void LibvlcTrackDescriptionListRelease(global::VideoLAN.LibVLC.Generated.TrackDescription p_track_description)
+        public static void LibvlcTrackDescriptionListRelease(global::VideoLAN.LibVLC.TrackDescription p_track_description)
         {
             var __arg0 = ReferenceEquals(p_track_description, null) ? global::System.IntPtr.Zero : p_track_description.__Instance;
             __Internal.LibvlcTrackDescriptionListRelease(__arg0);
@@ -2697,7 +2697,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>The same limitations applies to this function</para>
         /// <para>as to libvlc_set_fullscreen().</para>
         /// </remarks>
-        public static void LibvlcToggleFullscreen(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcToggleFullscreen(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcToggleFullscreen(__arg0);
@@ -2714,7 +2714,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>to the root windowbeforefullscreen mode is enabled. You will want</para>
         /// <para>to reparent it back to its normal parent when disabling fullscreen.</para>
         /// </remarks>
-        public static void LibvlcSetFullscreen(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int b_fullscreen)
+        public static void LibvlcSetFullscreen(global::VideoLAN.LibVLC.MediaPlayer p_mi, int b_fullscreen)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcSetFullscreen(__arg0, b_fullscreen);
@@ -2723,7 +2723,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get current fullscreen status.</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>the fullscreen status (boolean)</returns>
-        public static int LibvlcGetFullscreen(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcGetFullscreen(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcGetFullscreen(__arg0);
@@ -2744,7 +2744,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>handle key presses and mouse clicks in any case.</para>
         /// <para>This function is only implemented for X11 and Win32 at the moment.</para>
         /// </remarks>
-        public static void LibvlcVideoSetKeyInput(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint on)
+        public static void LibvlcVideoSetKeyInput(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint on)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetKeyInput(__arg0, on);
@@ -2761,7 +2761,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_video_set_key_input().</para>
         /// <para>This function is only implemented for X11 and Win32 at the moment.</para>
         /// </remarks>
-        public static void LibvlcVideoSetMouseInput(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint on)
+        public static void LibvlcVideoSetMouseInput(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint on)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetMouseInput(__arg0, on);
@@ -2773,7 +2773,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="px">pointer to get the pixel width [OUT]</param>
         /// <param name="py">pointer to get the pixel height [OUT]</param>
         /// <returns>0 on success, -1 if the specified video does not exist</returns>
-        public static int LibvlcVideoGetSize(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint num, ref uint px, ref uint py)
+        public static int LibvlcVideoGetSize(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint num, ref uint px, ref uint py)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             fixed (uint* __refParamPtr2 = &px)
@@ -2808,7 +2808,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>LibVLC does not support multiple pointers (it does of course support</para>
         /// <para>multiple input devices sharing the same pointer) at the moment.</para>
         /// </remarks>
-        public static int LibvlcVideoGetCursor(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint num, ref int px, ref int py)
+        public static int LibvlcVideoGetCursor(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint num, ref int px, ref int py)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             fixed (int* __refParamPtr2 = &px)
@@ -2832,7 +2832,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the currently configured zoom factor, or 0. if the video is set</para>
         /// <para>to fit to the output window/drawable automatically.</para>
         /// </returns>
-        public static float LibvlcVideoGetScale(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static float LibvlcVideoGetScale(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetScale(__arg0);
@@ -2848,7 +2848,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the media player</param>
         /// <param name="f_factor">the scaling factor, or zero</param>
         /// <remarks>Note that not all video outputs support scaling.</remarks>
-        public static void LibvlcVideoSetScale(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, float f_factor)
+        public static void LibvlcVideoSetScale(global::VideoLAN.LibVLC.MediaPlayer p_mi, float f_factor)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetScale(__arg0, f_factor);
@@ -2860,7 +2860,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the video aspect ratio or NULL if unspecified</para>
         /// <para>(the result must be released with free() or libvlc_free()).</para>
         /// </returns>
-        public static sbyte* LibvlcVideoGetAspectRatio(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static sbyte* LibvlcVideoGetAspectRatio(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetAspectRatio(__arg0);
@@ -2871,7 +2871,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the media player</param>
         /// <param name="psz_aspect">new video aspect-ratio or NULL to reset to default</param>
         /// <remarks>Invalid aspect ratios are ignored.</remarks>
-        public static void LibvlcVideoSetAspectRatio(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, string psz_aspect)
+        public static void LibvlcVideoSetAspectRatio(global::VideoLAN.LibVLC.MediaPlayer p_mi, string psz_aspect)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetAspectRatio(__arg0, psz_aspect);
@@ -2883,14 +2883,14 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>(the result must be released with free() or libvlc_free()).</para>
         /// </returns>
         /// <remarks>LibVLC 3.0.0 and later</remarks>
-        public static global::VideoLAN.LibVLC.Generated.VideoViewpoint LibvlcVideoNewViewpoint()
+        public static global::VideoLAN.LibVLC.VideoViewpoint LibvlcVideoNewViewpoint()
         {
             var __ret = __Internal.LibvlcVideoNewViewpoint();
-            global::VideoLAN.LibVLC.Generated.VideoViewpoint __result0;
+            global::VideoLAN.LibVLC.VideoViewpoint __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.VideoViewpoint.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.VideoViewpoint) global::VideoLAN.LibVLC.Generated.VideoViewpoint.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.VideoViewpoint.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.VideoViewpoint.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.VideoViewpoint) global::VideoLAN.LibVLC.VideoViewpoint.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.VideoViewpoint.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -2907,7 +2907,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>LibVLC 3.0.0 and later</para>
         /// <para>the values are set asynchronously, it will be used by the next frame displayed.</para>
         /// </remarks>
-        public static int LibvlcVideoUpdateViewpoint(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.VideoViewpoint p_viewpoint, bool b_absolute)
+        public static int LibvlcVideoUpdateViewpoint(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.VideoViewpoint p_viewpoint, bool b_absolute)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg1 = ReferenceEquals(p_viewpoint, null) ? global::System.IntPtr.Zero : p_viewpoint.__Instance;
@@ -2918,7 +2918,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get current video subtitle.</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>the video subtitle selected, or -1 if none</returns>
-        public static int LibvlcVideoGetSpu(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcVideoGetSpu(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetSpu(__arg0);
@@ -2928,7 +2928,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the number of available video subtitles.</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>the number of available video subtitles</returns>
-        public static int LibvlcVideoGetSpuCount(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcVideoGetSpuCount(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetSpuCount(__arg0);
@@ -2941,15 +2941,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>list containing description of available video subtitles.</para>
         /// <para>It must be freed with libvlc_track_description_list_release()</para>
         /// </returns>
-        public static global::VideoLAN.LibVLC.Generated.TrackDescription LibvlcVideoGetSpuDescription(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.TrackDescription LibvlcVideoGetSpuDescription(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetSpuDescription(__arg0);
-            global::VideoLAN.LibVLC.Generated.TrackDescription __result0;
+            global::VideoLAN.LibVLC.TrackDescription __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.TrackDescription) global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.TrackDescription.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.TrackDescription) global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.TrackDescription.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -2957,7 +2957,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">the media player</param>
         /// <param name="i_spu">video subtitle track to select (i_id from track description)</param>
         /// <returns>0 on success, -1 if out of range</returns>
-        public static int LibvlcVideoSetSpu(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_spu)
+        public static int LibvlcVideoSetSpu(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_spu)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoSetSpu(__arg0, i_spu);
@@ -2971,7 +2971,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <returns>time (in microseconds) the display of subtitles is being delayed</returns>
         /// <remarks>LibVLC 2.0.0 or later</remarks>
-        public static long LibvlcVideoGetSpuDelay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static long LibvlcVideoGetSpuDelay(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetSpuDelay(__arg0);
@@ -2990,7 +2990,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>The subtitle delay will be reset to zero each time the media changes.</para>
         /// <para>LibVLC 2.0.0 or later</para>
         /// </remarks>
-        public static int LibvlcVideoSetSpuDelay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, long i_delay)
+        public static int LibvlcVideoSetSpuDelay(global::VideoLAN.LibVLC.MediaPlayer p_mi, long i_delay)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoSetSpuDelay(__arg0, i_delay);
@@ -3006,7 +3006,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </param>
         /// <returns>the number of titles (-1 on error)</returns>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static int LibvlcMediaPlayerGetFullTitleDescriptions(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.TitleDescription titles)
+        public static int LibvlcMediaPlayerGetFullTitleDescriptions(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.TitleDescription titles)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg1 = ReferenceEquals(titles, null) ? global::System.IntPtr.Zero : titles.__Instance;
@@ -3018,7 +3018,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_titles">title description array to release</param>
         /// <param name="i_count">number of title descriptions to release</param>
         /// <remarks>LibVLC 3.0.0 and later</remarks>
-        public static void LibvlcTitleDescriptionsRelease(global::VideoLAN.LibVLC.Generated.TitleDescription p_titles, uint i_count)
+        public static void LibvlcTitleDescriptionsRelease(global::VideoLAN.LibVLC.TitleDescription p_titles, uint i_count)
         {
             var __arg0 = ReferenceEquals(p_titles, null) ? global::System.IntPtr.Zero : p_titles.__Instance;
             __Internal.LibvlcTitleDescriptionsRelease(__arg0, i_count);
@@ -3034,7 +3034,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </param>
         /// <returns>the number of chapters (-1 on error)</returns>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static int LibvlcMediaPlayerGetFullChapterDescriptions(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_chapters_of_title, global::VideoLAN.LibVLC.Generated.ChapterDescription pp_chapters)
+        public static int LibvlcMediaPlayerGetFullChapterDescriptions(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_chapters_of_title, global::VideoLAN.LibVLC.ChapterDescription pp_chapters)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg2 = ReferenceEquals(pp_chapters, null) ? global::System.IntPtr.Zero : pp_chapters.__Instance;
@@ -3046,7 +3046,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_chapters">chapter description array to release</param>
         /// <param name="i_count">number of chapter descriptions to release</param>
         /// <remarks>LibVLC 3.0.0 and later</remarks>
-        public static void LibvlcChapterDescriptionsRelease(global::VideoLAN.LibVLC.Generated.ChapterDescription p_chapters, uint i_count)
+        public static void LibvlcChapterDescriptionsRelease(global::VideoLAN.LibVLC.ChapterDescription p_chapters, uint i_count)
         {
             var __arg0 = ReferenceEquals(p_chapters, null) ? global::System.IntPtr.Zero : p_chapters.__Instance;
             __Internal.LibvlcChapterDescriptionsRelease(__arg0, i_count);
@@ -3055,7 +3055,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get current crop filter geometry.</summary>
         /// <param name="p_mi">the media player</param>
         /// <returns>the crop filter geometry or NULL if unset</returns>
-        public static sbyte* LibvlcVideoGetCropGeometry(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static sbyte* LibvlcVideoGetCropGeometry(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetCropGeometry(__arg0);
@@ -3065,7 +3065,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Set new crop filter geometry.</summary>
         /// <param name="p_mi">the media player</param>
         /// <param name="psz_geometry">new crop filter geometry (NULL to unset)</param>
-        public static void LibvlcVideoSetCropGeometry(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, string psz_geometry)
+        public static void LibvlcVideoSetCropGeometry(global::VideoLAN.LibVLC.MediaPlayer p_mi, string psz_geometry)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetCropGeometry(__arg0, psz_geometry);
@@ -3078,7 +3078,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>Teletext is disabled by default, call libvlc_video_set_teletext() to enable</para>
         /// <para>it.</para>
         /// </remarks>
-        public static int LibvlcVideoGetTeletext(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcVideoGetTeletext(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetTeletext(__arg0);
@@ -3092,7 +3092,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>teletext, a number in the range ]0;1000[ to show the requested page, or a</para>
         /// </param>
         /// <remarks>This function can also be used to send a teletext key.</remarks>
-        public static void LibvlcVideoSetTeletext(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_page)
+        public static void LibvlcVideoSetTeletext(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_page)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetTeletext(__arg0, i_page);
@@ -3101,7 +3101,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get number of available video tracks.</summary>
         /// <param name="p_mi">media player</param>
         /// <returns>the number of available video tracks (int)</returns>
-        public static int LibvlcVideoGetTrackCount(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcVideoGetTrackCount(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetTrackCount(__arg0);
@@ -3114,22 +3114,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>list with description of available video tracks, or NULL on error.</para>
         /// <para>It must be freed with libvlc_track_description_list_release()</para>
         /// </returns>
-        public static global::VideoLAN.LibVLC.Generated.TrackDescription LibvlcVideoGetTrackDescription(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.TrackDescription LibvlcVideoGetTrackDescription(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetTrackDescription(__arg0);
-            global::VideoLAN.LibVLC.Generated.TrackDescription __result0;
+            global::VideoLAN.LibVLC.TrackDescription __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.TrackDescription) global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.TrackDescription.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.TrackDescription) global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.TrackDescription.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Get current video track.</summary>
         /// <param name="p_mi">media player</param>
         /// <returns>the video track ID (int) or -1 if no active input</returns>
-        public static int LibvlcVideoGetTrack(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcVideoGetTrack(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetTrack(__arg0);
@@ -3140,7 +3140,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <param name="i_track">the track ID (i_id field from track description)</param>
         /// <returns>0 on success, -1 if out of range</returns>
-        public static int LibvlcVideoSetTrack(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_track)
+        public static int LibvlcVideoSetTrack(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_track)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoSetTrack(__arg0, i_track);
@@ -3158,7 +3158,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>If i_width AND i_height is 0, original size is used.</para>
         /// <para>If i_width XOR i_height is 0, original aspect-ratio is preserved.</para>
         /// </remarks>
-        public static int LibvlcVideoTakeSnapshot(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint num, string psz_filepath, uint i_width, uint i_height)
+        public static int LibvlcVideoTakeSnapshot(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint num, string psz_filepath, uint i_width, uint i_height)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoTakeSnapshot(__arg0, num, psz_filepath, i_width, i_height);
@@ -3168,7 +3168,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Enable or disable deinterlace filter</summary>
         /// <param name="p_mi">libvlc media player</param>
         /// <param name="psz_mode">type of deinterlace filter, NULL to disable</param>
-        public static void LibvlcVideoSetDeinterlace(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, string psz_mode)
+        public static void LibvlcVideoSetDeinterlace(global::VideoLAN.LibVLC.MediaPlayer p_mi, string psz_mode)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetDeinterlace(__arg0, psz_mode);
@@ -3178,7 +3178,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player</param>
         /// <param name="option">marq option to get</param>
         /// <remarks>libvlc_video_marquee_int_option_t</remarks>
-        public static int LibvlcVideoGetMarqueeInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option)
+        public static int LibvlcVideoGetMarqueeInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetMarqueeInt(__arg0, option);
@@ -3189,7 +3189,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player</param>
         /// <param name="option">marq option to get</param>
         /// <remarks>libvlc_video_marquee_string_option_t</remarks>
-        public static sbyte* LibvlcVideoGetMarqueeString(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option)
+        public static sbyte* LibvlcVideoGetMarqueeString(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetMarqueeString(__arg0, option);
@@ -3205,7 +3205,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>or disabling (arg 0) the marq filter.</para>
         /// <para>libvlc_video_marquee_int_option_t</para>
         /// </remarks>
-        public static void LibvlcVideoSetMarqueeInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, int i_val)
+        public static void LibvlcVideoSetMarqueeInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, int i_val)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetMarqueeInt(__arg0, option, i_val);
@@ -3216,7 +3216,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="option">marq option to set</param>
         /// <param name="psz_text">marq option value</param>
         /// <remarks>libvlc_video_marquee_string_option_t</remarks>
-        public static void LibvlcVideoSetMarqueeString(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, string psz_text)
+        public static void LibvlcVideoSetMarqueeString(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, string psz_text)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetMarqueeString(__arg0, option, psz_text);
@@ -3225,7 +3225,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get integer logo option.</summary>
         /// <param name="p_mi">libvlc media player instance</param>
         /// <param name="option">logo option to get, values of libvlc_video_logo_option_t</param>
-        public static int LibvlcVideoGetLogoInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option)
+        public static int LibvlcVideoGetLogoInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetLogoInt(__arg0, option);
@@ -3241,7 +3241,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player instance</param>
         /// <param name="option">logo option to set, values of libvlc_video_logo_option_t</param>
         /// <param name="value">logo option value</param>
-        public static void LibvlcVideoSetLogoInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, int value)
+        public static void LibvlcVideoSetLogoInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, int value)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetLogoInt(__arg0, option, value);
@@ -3254,7 +3254,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player instance</param>
         /// <param name="option">logo option to set, values of libvlc_video_logo_option_t</param>
         /// <param name="psz_value">logo option value</param>
-        public static void LibvlcVideoSetLogoString(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, string psz_value)
+        public static void LibvlcVideoSetLogoString(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, string psz_value)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetLogoString(__arg0, option, psz_value);
@@ -3264,7 +3264,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player instance</param>
         /// <param name="option">adjust option to get, values of libvlc_video_adjust_option_t</param>
         /// <remarks>LibVLC 1.1.1 and later.</remarks>
-        public static int LibvlcVideoGetAdjustInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option)
+        public static int LibvlcVideoGetAdjustInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetAdjustInt(__arg0, option);
@@ -3281,7 +3281,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="option">adust option to set, values of libvlc_video_adjust_option_t</param>
         /// <param name="value">adjust option value</param>
         /// <remarks>LibVLC 1.1.1 and later.</remarks>
-        public static void LibvlcVideoSetAdjustInt(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, int value)
+        public static void LibvlcVideoSetAdjustInt(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, int value)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetAdjustInt(__arg0, option, value);
@@ -3291,7 +3291,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">libvlc media player instance</param>
         /// <param name="option">adjust option to get, values of libvlc_video_adjust_option_t</param>
         /// <remarks>LibVLC 1.1.1 and later.</remarks>
-        public static float LibvlcVideoGetAdjustFloat(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option)
+        public static float LibvlcVideoGetAdjustFloat(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcVideoGetAdjustFloat(__arg0, option);
@@ -3306,7 +3306,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="option">adust option to set, values of libvlc_video_adjust_option_t</param>
         /// <param name="value">adjust option value</param>
         /// <remarks>LibVLC 1.1.1 and later.</remarks>
-        public static void LibvlcVideoSetAdjustFloat(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint option, float value)
+        public static void LibvlcVideoSetAdjustFloat(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint option, float value)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcVideoSetAdjustFloat(__arg0, option, value);
@@ -3320,21 +3320,21 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_audio_output_t .</para>
         /// <para>In case of error, NULL is returned.</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.AudioOutput LibvlcAudioOutputListGet(global::VideoLAN.LibVLC.Generated.Instance p_instance)
+        public static global::VideoLAN.LibVLC.AudioOutputDescription LibvlcAudioOutputListGet(global::VideoLAN.LibVLC.Instance p_instance)
         {
             var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputListGet(__arg0);
-            global::VideoLAN.LibVLC.Generated.AudioOutput __result0;
+            global::VideoLAN.LibVLC.AudioOutputDescription __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.AudioOutput.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.AudioOutput) global::VideoLAN.LibVLC.Generated.AudioOutput.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.AudioOutput.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.AudioOutputDescription) global::VideoLAN.LibVLC.AudioOutputDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.AudioOutputDescription.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Frees the list of available audio output modules.</summary>
         /// <param name="p_list">list with audio outputs for release</param>
-        public static void LibvlcAudioOutputListRelease(global::VideoLAN.LibVLC.Generated.AudioOutput p_list)
+        public static void LibvlcAudioOutputListRelease(global::VideoLAN.LibVLC.AudioOutputDescription p_list)
         {
             var __arg0 = ReferenceEquals(p_list, null) ? global::System.IntPtr.Zero : p_list.__Instance;
             __Internal.LibvlcAudioOutputListRelease(__arg0);
@@ -3352,7 +3352,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>restarted. Audio output cannot be changed while playing.</para>
         /// <para>libvlc_audio_output_t</para>
         /// </remarks>
-        public static int LibvlcAudioOutputSet(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, string psz_name)
+        public static int LibvlcAudioOutputSet(global::VideoLAN.LibVLC.MediaPlayer p_mi, string psz_name)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioOutputSet(__arg0, psz_name);
@@ -3375,15 +3375,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>explicit audio device.</para>
         /// <para>LibVLC 2.2.0 or later.</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.AudioOutputDevice LibvlcAudioOutputDeviceEnum(global::VideoLAN.LibVLC.Generated.MediaPlayer mp)
+        public static global::VideoLAN.LibVLC.AudioOutputDevice LibvlcAudioOutputDeviceEnum(global::VideoLAN.LibVLC.MediaPlayer mp)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceEnum(__arg0);
-            global::VideoLAN.LibVLC.Generated.AudioOutputDevice __result0;
+            global::VideoLAN.LibVLC.AudioOutputDevice __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.AudioOutputDevice) global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -3408,22 +3408,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>explicit audio device.</para>
         /// <para>LibVLC 2.1.0 or later.</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.AudioOutputDevice LibvlcAudioOutputDeviceListGet(global::VideoLAN.LibVLC.Generated.Instance p_instance, string aout)
+        public static global::VideoLAN.LibVLC.AudioOutputDevice LibvlcAudioOutputDeviceListGet(global::VideoLAN.LibVLC.Instance p_instance, string aout)
         {
             var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceListGet(__arg0, aout);
-            global::VideoLAN.LibVLC.Generated.AudioOutputDevice __result0;
+            global::VideoLAN.LibVLC.AudioOutputDevice __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.AudioOutputDevice) global::VideoLAN.LibVLC.Generated.AudioOutputDevice.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.AudioOutputDevice.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.AudioOutputDevice) global::VideoLAN.LibVLC.AudioOutputDevice.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.AudioOutputDevice.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Frees a list of available audio output devices.</summary>
         /// <param name="p_list">list with audio outputs for release</param>
         /// <remarks>LibVLC 2.1.0 or later.</remarks>
-        public static void LibvlcAudioOutputDeviceListRelease(global::VideoLAN.LibVLC.Generated.AudioOutputDevice p_list)
+        public static void LibvlcAudioOutputDeviceListRelease(global::VideoLAN.LibVLC.AudioOutputDevice p_list)
         {
             var __arg0 = ReferenceEquals(p_list, null) ? global::System.IntPtr.Zero : p_list.__Instance;
             __Internal.LibvlcAudioOutputDeviceListRelease(__arg0);
@@ -3460,7 +3460,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>in the case of ALSA).</para>
         /// <para>libvlc_audio_output_t)</para>
         /// </remarks>
-        public static void LibvlcAudioOutputDeviceSet(global::VideoLAN.LibVLC.Generated.MediaPlayer mp, string module, string device_id)
+        public static void LibvlcAudioOutputDeviceSet(global::VideoLAN.LibVLC.MediaPlayer mp, string module, string device_id)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             __Internal.LibvlcAudioOutputDeviceSet(__arg0, module, device_id);
@@ -3486,7 +3486,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>dynamic audio device changes as they happen.</para>
         /// <para>LibVLC 3.0.0 or later.</para>
         /// </remarks>
-        public static sbyte* LibvlcAudioOutputDeviceGet(global::VideoLAN.LibVLC.Generated.MediaPlayer mp)
+        public static sbyte* LibvlcAudioOutputDeviceGet(global::VideoLAN.LibVLC.MediaPlayer mp)
         {
             var __arg0 = ReferenceEquals(mp, null) ? global::System.IntPtr.Zero : mp.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceGet(__arg0);
@@ -3501,7 +3501,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>there is a small race condition where toggling will not work.</para>
         /// <para>See also the limitations of libvlc_audio_set_mute().</para>
         /// </remarks>
-        public static void LibvlcAudioToggleMute(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcAudioToggleMute(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcAudioToggleMute(__arg0);
@@ -3510,7 +3510,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get current mute status.</summary>
         /// <param name="p_mi">media player</param>
         /// <returns>the mute status (boolean) if defined, -1 if undefined/unapplicable</returns>
-        public static int LibvlcAudioGetMute(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcAudioGetMute(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetMute(__arg0);
@@ -3528,7 +3528,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>To force silent playback, disable all audio tracks. This is more</para>
         /// <para>efficient and reliable than mute.</para>
         /// </remarks>
-        public static void LibvlcAudioSetMute(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int status)
+        public static void LibvlcAudioSetMute(global::VideoLAN.LibVLC.MediaPlayer p_mi, int status)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             __Internal.LibvlcAudioSetMute(__arg0, status);
@@ -3540,7 +3540,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>the software volume in percents</para>
         /// <para>(0 = mute, 100 = nominal / 0dB)</para>
         /// </returns>
-        public static int LibvlcAudioGetVolume(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcAudioGetVolume(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetVolume(__arg0);
@@ -3551,7 +3551,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <param name="i_volume">the volume in percents (0 = mute, 100 = 0dB)</param>
         /// <returns>0 if the volume was set, -1 if it was out of range</returns>
-        public static int LibvlcAudioSetVolume(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_volume)
+        public static int LibvlcAudioSetVolume(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_volume)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioSetVolume(__arg0, i_volume);
@@ -3561,7 +3561,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get number of available audio tracks.</summary>
         /// <param name="p_mi">media player</param>
         /// <returns>the number of available audio tracks (int), or -1 if unavailable</returns>
-        public static int LibvlcAudioGetTrackCount(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcAudioGetTrackCount(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetTrackCount(__arg0);
@@ -3574,22 +3574,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>list with description of available audio tracks, or NULL.</para>
         /// <para>It must be freed with libvlc_track_description_list_release()</para>
         /// </returns>
-        public static global::VideoLAN.LibVLC.Generated.TrackDescription LibvlcAudioGetTrackDescription(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static global::VideoLAN.LibVLC.TrackDescription LibvlcAudioGetTrackDescription(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetTrackDescription(__arg0);
-            global::VideoLAN.LibVLC.Generated.TrackDescription __result0;
+            global::VideoLAN.LibVLC.TrackDescription __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.TrackDescription) global::VideoLAN.LibVLC.Generated.TrackDescription.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.TrackDescription.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.TrackDescription) global::VideoLAN.LibVLC.TrackDescription.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.TrackDescription.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Get current audio track.</summary>
         /// <param name="p_mi">media player</param>
         /// <returns>the audio track ID or -1 if no active input.</returns>
-        public static int LibvlcAudioGetTrack(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcAudioGetTrack(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetTrack(__arg0);
@@ -3600,7 +3600,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <param name="i_track">the track ID (i_id field from track description)</param>
         /// <returns>0 on success, -1 on error</returns>
-        public static int LibvlcAudioSetTrack(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int i_track)
+        public static int LibvlcAudioSetTrack(global::VideoLAN.LibVLC.MediaPlayer p_mi, int i_track)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioSetTrack(__arg0, i_track);
@@ -3611,7 +3611,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <returns>the audio channel</returns>
         /// <remarks>libvlc_audio_output_channel_t</remarks>
-        public static int LibvlcAudioGetChannel(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcAudioGetChannel(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetChannel(__arg0);
@@ -3623,7 +3623,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="channel">the audio channel,</param>
         /// <returns>0 on success, -1 on error</returns>
         /// <remarks>libvlc_audio_output_channel_t</remarks>
-        public static int LibvlcAudioSetChannel(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, int channel)
+        public static int LibvlcAudioSetChannel(global::VideoLAN.LibVLC.MediaPlayer p_mi, int channel)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioSetChannel(__arg0, channel);
@@ -3634,7 +3634,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <returns>the audio delay (microseconds)</returns>
         /// <remarks>LibVLC 1.1.1 or later</remarks>
-        public static long LibvlcAudioGetDelay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static long LibvlcAudioGetDelay(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioGetDelay(__arg0);
@@ -3646,7 +3646,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="i_delay">the audio delay (microseconds)</param>
         /// <returns>0 on success, -1 on error</returns>
         /// <remarks>LibVLC 1.1.1 or later</remarks>
-        public static int LibvlcAudioSetDelay(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, long i_delay)
+        public static int LibvlcAudioSetDelay(global::VideoLAN.LibVLC.MediaPlayer p_mi, long i_delay)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcAudioSetDelay(__arg0, i_delay);
@@ -3708,14 +3708,14 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>it is no longer needed.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.Equalizer LibvlcAudioEqualizerNew()
+        public static global::VideoLAN.LibVLC.Equalizer LibvlcAudioEqualizerNew()
         {
             var __ret = __Internal.LibvlcAudioEqualizerNew();
-            global::VideoLAN.LibVLC.Generated.Equalizer __result0;
+            global::VideoLAN.LibVLC.Equalizer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.Equalizer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.Equalizer) global::VideoLAN.LibVLC.Generated.Equalizer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.Equalizer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.Equalizer) global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.Equalizer.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -3732,14 +3732,14 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>it is no longer needed.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.Equalizer LibvlcAudioEqualizerNewFromPreset(uint u_index)
+        public static global::VideoLAN.LibVLC.Equalizer LibvlcAudioEqualizerNewFromPreset(uint u_index)
         {
             var __ret = __Internal.LibvlcAudioEqualizerNewFromPreset(u_index);
-            global::VideoLAN.LibVLC.Generated.Equalizer __result0;
+            global::VideoLAN.LibVLC.Equalizer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.Equalizer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.Equalizer) global::VideoLAN.LibVLC.Generated.Equalizer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.Equalizer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.Equalizer) global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.Equalizer.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -3751,7 +3751,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>It is safe to invoke this method with a NULL p_equalizer parameter for no effect.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static void LibvlcAudioEqualizerRelease(global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer)
+        public static void LibvlcAudioEqualizerRelease(global::VideoLAN.LibVLC.Equalizer p_equalizer)
         {
             var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
             __Internal.LibvlcAudioEqualizerRelease(__arg0);
@@ -3767,7 +3767,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>The supplied amplification value will be clamped to the -20.0 to +20.0 range.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static int LibvlcAudioEqualizerSetPreamp(global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer, float f_preamp)
+        public static int LibvlcAudioEqualizerSetPreamp(global::VideoLAN.LibVLC.Equalizer p_equalizer, float f_preamp)
         {
             var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
             var __ret = __Internal.LibvlcAudioEqualizerSetPreamp(__arg0, f_preamp);
@@ -3778,7 +3778,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_equalizer">valid equalizer handle, must not be NULL</param>
         /// <returns>preamp value (Hz)</returns>
         /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static float LibvlcAudioEqualizerGetPreamp(global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer)
+        public static float LibvlcAudioEqualizerGetPreamp(global::VideoLAN.LibVLC.Equalizer p_equalizer)
         {
             var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
             var __ret = __Internal.LibvlcAudioEqualizerGetPreamp(__arg0);
@@ -3796,7 +3796,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>The supplied amplification value will be clamped to the -20.0 to +20.0 range.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static int LibvlcAudioEqualizerSetAmpAtIndex(global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer, float f_amp, uint u_band)
+        public static int LibvlcAudioEqualizerSetAmpAtIndex(global::VideoLAN.LibVLC.Equalizer p_equalizer, float f_amp, uint u_band)
         {
             var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
             var __ret = __Internal.LibvlcAudioEqualizerSetAmpAtIndex(__arg0, f_amp, u_band);
@@ -3808,7 +3808,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="u_band">index, counting from zero, of the frequency band to get</param>
         /// <returns>amplification value (Hz); NaN if there is no such frequency band</returns>
         /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static float LibvlcAudioEqualizerGetAmpAtIndex(global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer, uint u_band)
+        public static float LibvlcAudioEqualizerGetAmpAtIndex(global::VideoLAN.LibVLC.Equalizer p_equalizer, uint u_band)
         {
             var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
             var __ret = __Internal.LibvlcAudioEqualizerGetAmpAtIndex(__arg0, u_band);
@@ -3836,7 +3836,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>returns.</para>
         /// <para>LibVLC 2.2.0 or later</para>
         /// </remarks>
-        public static int LibvlcMediaPlayerSetEqualizer(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, global::VideoLAN.LibVLC.Generated.Equalizer p_equalizer)
+        public static int LibvlcMediaPlayerSetEqualizer(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.Equalizer p_equalizer)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __arg1 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.__Instance;
@@ -3848,7 +3848,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <returns>the media player role (</returns>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static int LibvlcMediaPlayerGetRole(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static int LibvlcMediaPlayerGetRole(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerGetRole(__arg0);
@@ -3859,7 +3859,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mi">media player</param>
         /// <param name="role">the media player role (</param>
         /// <returns>0 on success, -1 on error</returns>
-        public static int LibvlcMediaPlayerSetRole(global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi, uint role)
+        public static int LibvlcMediaPlayerSetRole(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint role)
         {
             var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
             var __ret = __Internal.LibvlcMediaPlayerSetRole(__arg0, role);

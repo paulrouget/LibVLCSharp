@@ -1841,7 +1841,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static global::VideoLAN.LibVLC.Media LibvlcMediaNewLocation(global::VideoLAN.LibVLC.Instance p_instance, string psz_mrl)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaNewLocation(__arg0, psz_mrl);
             global::VideoLAN.LibVLC.Media __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -1858,7 +1858,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>libvlc_media_release</remarks>
         public static global::VideoLAN.LibVLC.Media LibvlcMediaNewPath(global::VideoLAN.LibVLC.Instance p_instance, string path)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaNewPath(__arg0, path);
             global::VideoLAN.LibVLC.Media __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -1891,7 +1891,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static global::VideoLAN.LibVLC.Media LibvlcMediaNewFd(global::VideoLAN.LibVLC.Instance p_instance, int fd)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaNewFd(__arg0, fd);
             global::VideoLAN.LibVLC.Media __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -1922,7 +1922,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static global::VideoLAN.LibVLC.Media LibvlcMediaNewCallbacks(global::VideoLAN.LibVLC.Instance instance, global::VideoLAN.LibVLC.LibvlcMediaOpenCb open_cb, global::VideoLAN.LibVLC.LibvlcMediaReadCb read_cb, global::VideoLAN.LibVLC.LibvlcMediaSeekCb seek_cb, global::VideoLAN.LibVLC.LibvlcMediaCloseCb close_cb, global::System.IntPtr opaque)
         {
-            var __arg0 = ReferenceEquals(instance, null) ? global::System.IntPtr.Zero : instance.NativeReference;
+            var __arg0 = ReferenceEquals(instance, null) ? global::System.IntPtr.Zero : instance.__Instance;
             var __arg1 = open_cb == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(open_cb);
             var __arg2 = read_cb == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(read_cb);
             var __arg3 = seek_cb == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(seek_cb);
@@ -1943,7 +1943,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>libvlc_media_release</remarks>
         public static global::VideoLAN.LibVLC.Media LibvlcMediaNewAsNode(global::VideoLAN.LibVLC.Instance p_instance, string psz_name)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaNewAsNode(__arg0, psz_name);
             global::VideoLAN.LibVLC.Media __result0;
             if (__ret == IntPtr.Zero) __result0 = null;

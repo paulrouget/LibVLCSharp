@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>
     /// <para>LibVLC renderer discoverer finds available renderers available on the local</para>
@@ -35,29 +35,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererItem> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererItem>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererItem> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererItem>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererItem __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererItem __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererItem(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.RendererItem(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererItem __CreateInstance(global::VideoLAN.LibVLC.Generated.RendererItem.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererItem __CreateInstance(global::VideoLAN.LibVLC.RendererItem.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererItem(native, skipVTables);
+            return new global::VideoLAN.LibVLC.RendererItem(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.RendererItem.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.RendererItem.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.RendererItem.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.RendererItem.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.RendererItem.__Internal));
+            *(global::VideoLAN.LibVLC.RendererItem.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private RendererItem(global::VideoLAN.LibVLC.Generated.RendererItem.__Internal native, bool skipVTables = false)
+        private RendererItem(global::VideoLAN.LibVLC.RendererItem.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -82,29 +82,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererDiscoverer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererDiscoverer>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererDiscoverer> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererDiscoverer>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererDiscoverer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererDiscoverer __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererDiscoverer(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.RendererDiscoverer(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererDiscoverer __CreateInstance(global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererDiscoverer __CreateInstance(global::VideoLAN.LibVLC.RendererDiscoverer.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererDiscoverer(native, skipVTables);
+            return new global::VideoLAN.LibVLC.RendererDiscoverer(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.RendererDiscoverer.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.RendererDiscoverer.__Internal));
+            *(global::VideoLAN.LibVLC.RendererDiscoverer.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private RendererDiscoverer(global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__Internal native, bool skipVTables = false)
+        private RendererDiscoverer(global::VideoLAN.LibVLC.RendererDiscoverer.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -141,29 +141,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererDiscovererDescription> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.RendererDiscovererDescription>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererDiscovererDescription __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.RendererDiscovererDescription(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription __CreateInstance(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.RendererDiscovererDescription __CreateInstance(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription(native, skipVTables);
+            return new global::VideoLAN.LibVLC.RendererDiscovererDescription(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal));
+            *(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private RendererDiscovererDescription(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal native, bool skipVTables = false)
+        private RendererDiscovererDescription(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -179,17 +179,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public RendererDiscovererDescription()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public RendererDiscovererDescription(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription _0)
+        public RendererDiscovererDescription(global::VideoLAN.LibVLC.RendererDiscovererDescription _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -201,7 +201,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription __dummy;
+            global::VideoLAN.LibVLC.RendererDiscovererDescription __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -212,12 +212,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) __Instance)->psz_name;
+                return (sbyte*) ((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) __Instance)->psz_name;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) __Instance)->psz_name = (global::System.IntPtr) value;
             }
         }
 
@@ -225,12 +225,12 @@ namespace VideoLAN.LibVLC.Generated
         {
             get
             {
-                return (sbyte*) ((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) __Instance)->psz_longname;
+                return (sbyte*) ((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) __Instance)->psz_longname;
             }
 
             set
             {
-                ((global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription.__Internal*) __Instance)->psz_longname = (global::System.IntPtr) value;
+                ((global::VideoLAN.LibVLC.RendererDiscovererDescription.__Internal*) __Instance)->psz_longname = (global::System.IntPtr) value;
             }
         }
     }
@@ -298,7 +298,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the human readable name of a renderer item</summary>
         /// <returns>the name of the item (can't be NULL, must *not* be freed)</returns>
         /// <remarks>LibVLC 3.0.0 or later</remarks>
-        public static string LibvlcRendererItemName(global::VideoLAN.LibVLC.Generated.RendererItem p_item)
+        public static string LibvlcRendererItemName(global::VideoLAN.LibVLC.RendererItem p_item)
         {
             var __arg0 = ReferenceEquals(p_item, null) ? global::System.IntPtr.Zero : p_item.__Instance;
             var __ret = __Internal.LibvlcRendererItemName(__arg0);
@@ -311,7 +311,7 @@ namespace VideoLAN.LibVLC.Generated
         /// </summary>
         /// <returns>the type of the item (can't be NULL, must *not* be freed)</returns>
         /// <remarks>LibVLC 3.0.0 or later</remarks>
-        public static string LibvlcRendererItemType(global::VideoLAN.LibVLC.Generated.RendererItem p_item)
+        public static string LibvlcRendererItemType(global::VideoLAN.LibVLC.RendererItem p_item)
         {
             var __arg0 = ReferenceEquals(p_item, null) ? global::System.IntPtr.Zero : p_item.__Instance;
             var __ret = __Internal.LibvlcRendererItemType(__arg0);
@@ -321,7 +321,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get the icon uri of a renderer item</summary>
         /// <returns>the uri of the item's icon (can be NULL, must *not* be freed)</returns>
         /// <remarks>LibVLC 3.0.0 or later</remarks>
-        public static string LibvlcRendererItemIconUri(global::VideoLAN.LibVLC.Generated.RendererItem p_item)
+        public static string LibvlcRendererItemIconUri(global::VideoLAN.LibVLC.RendererItem p_item)
         {
             var __arg0 = ReferenceEquals(p_item, null) ? global::System.IntPtr.Zero : p_item.__Instance;
             var __ret = __Internal.LibvlcRendererItemIconUri(__arg0);
@@ -335,7 +335,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>LIBVLC_RENDERER_CAN_VIDEO</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static int LibvlcRendererItemFlags(global::VideoLAN.LibVLC.Generated.RendererItem p_item)
+        public static int LibvlcRendererItemFlags(global::VideoLAN.LibVLC.RendererItem p_item)
         {
             var __arg0 = ReferenceEquals(p_item, null) ? global::System.IntPtr.Zero : p_item.__Instance;
             var __ret = __Internal.LibvlcRendererItemFlags(__arg0);
@@ -358,22 +358,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_discoverer_start()</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.RendererDiscoverer LibvlcRendererDiscovererNew(global::VideoLAN.LibVLC.Generated.Instance p_inst, string psz_name)
+        public static global::VideoLAN.LibVLC.RendererDiscoverer LibvlcRendererDiscovererNew(global::VideoLAN.LibVLC.Instance p_inst, string psz_name)
         {
             var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.__Instance;
             var __ret = __Internal.LibvlcRendererDiscovererNew(__arg0, psz_name);
-            global::VideoLAN.LibVLC.Generated.RendererDiscoverer __result0;
+            global::VideoLAN.LibVLC.RendererDiscoverer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.RendererDiscoverer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.RendererDiscoverer) global::VideoLAN.LibVLC.Generated.RendererDiscoverer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.RendererDiscoverer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.RendererDiscoverer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.RendererDiscoverer) global::VideoLAN.LibVLC.RendererDiscoverer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.RendererDiscoverer.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Release a renderer discoverer object</summary>
         /// <param name="p_rd">renderer discoverer object</param>
         /// <remarks>LibVLC 3.0.0 or later</remarks>
-        public static void LibvlcRendererDiscovererRelease(global::VideoLAN.LibVLC.Generated.RendererDiscoverer p_rd)
+        public static void LibvlcRendererDiscovererRelease(global::VideoLAN.LibVLC.RendererDiscoverer p_rd)
         {
             var __arg0 = ReferenceEquals(p_rd, null) ? global::System.IntPtr.Zero : p_rd.__Instance;
             __Internal.LibvlcRendererDiscovererRelease(__arg0);
@@ -388,7 +388,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_discoverer_stop()</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static int LibvlcRendererDiscovererStart(global::VideoLAN.LibVLC.Generated.RendererDiscoverer p_rd)
+        public static int LibvlcRendererDiscovererStart(global::VideoLAN.LibVLC.RendererDiscoverer p_rd)
         {
             var __arg0 = ReferenceEquals(p_rd, null) ? global::System.IntPtr.Zero : p_rd.__Instance;
             var __ret = __Internal.LibvlcRendererDiscovererStart(__arg0);
@@ -401,7 +401,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_discoverer_start()</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static void LibvlcRendererDiscovererStop(global::VideoLAN.LibVLC.Generated.RendererDiscoverer p_rd)
+        public static void LibvlcRendererDiscovererStop(global::VideoLAN.LibVLC.RendererDiscoverer p_rd)
         {
             var __arg0 = ReferenceEquals(p_rd, null) ? global::System.IntPtr.Zero : p_rd.__Instance;
             __Internal.LibvlcRendererDiscovererStop(__arg0);
@@ -418,15 +418,15 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_event_t.u.renderer_discoverer_item_removed.item</para>
         /// <para>LibVLC 3.0.0 or later</para>
         /// </remarks>
-        public static global::VideoLAN.LibVLC.Generated.EventManager LibvlcRendererDiscovererEventManager(global::VideoLAN.LibVLC.Generated.RendererDiscoverer p_rd)
+        public static global::VideoLAN.LibVLC.EventManager LibvlcRendererDiscovererEventManager(global::VideoLAN.LibVLC.RendererDiscoverer p_rd)
         {
             var __arg0 = ReferenceEquals(p_rd, null) ? global::System.IntPtr.Zero : p_rd.__Instance;
             var __ret = __Internal.LibvlcRendererDiscovererEventManager(__arg0);
-            global::VideoLAN.LibVLC.Generated.EventManager __result0;
+            global::VideoLAN.LibVLC.EventManager __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.EventManager) global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.EventManager.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.EventManager.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.EventManager) global::VideoLAN.LibVLC.EventManager.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.EventManager.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -442,7 +442,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_list_release()</para>
         /// <para>LibVLC 3.0.0 and later</para>
         /// </remarks>
-        public static ulong LibvlcRendererDiscovererListGet(global::VideoLAN.LibVLC.Generated.Instance p_inst, global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription ppp_services)
+        public static ulong LibvlcRendererDiscovererListGet(global::VideoLAN.LibVLC.Instance p_inst, global::VideoLAN.LibVLC.RendererDiscovererDescription ppp_services)
         {
             var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.__Instance;
             var __arg1 = ReferenceEquals(ppp_services, null) ? global::System.IntPtr.Zero : ppp_services.__Instance;
@@ -457,7 +457,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_renderer_discoverer_list_get()</para>
         /// <para>LibVLC 3.0.0 and later</para>
         /// </remarks>
-        public static void LibvlcRendererDiscovererListRelease(global::VideoLAN.LibVLC.Generated.RendererDiscovererDescription pp_services, ulong i_count)
+        public static void LibvlcRendererDiscovererListRelease(global::VideoLAN.LibVLC.RendererDiscovererDescription pp_services, ulong i_count)
         {
             var __arg0 = ReferenceEquals(pp_services, null) ? global::System.IntPtr.Zero : pp_services.__Instance;
             __Internal.LibvlcRendererDiscovererListRelease(__arg0, i_count);

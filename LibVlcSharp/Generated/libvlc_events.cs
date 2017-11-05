@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>Event types</summary>
     public enum EventType
@@ -160,7 +160,7 @@ namespace VideoLAN.LibVLC.Generated
             internal global::System.IntPtr p_obj;
 
             [FieldOffset(16)]
-            internal global::VideoLAN.LibVLC.Generated.Event._.__Internal u;
+            internal global::VideoLAN.LibVLC.Event._.__Internal u;
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -174,94 +174,94 @@ namespace VideoLAN.LibVLC.Generated
             public partial struct __Internal
             {
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.MetaType.__Internal media_meta_changed;
+                internal global::VideoLAN.LibVLC.Event._.MetaType.__Internal media_meta_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewChild.__Internal media_subitem_added;
+                internal global::VideoLAN.LibVLC.Event._.NewChild.__Internal media_subitem_added;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewDuration.__Internal media_duration_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewDuration.__Internal media_duration_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewStatus.__Internal media_parsed_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewStatus.__Internal media_parsed_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.Md.__Internal media_freed;
+                internal global::VideoLAN.LibVLC.Event._.Md.__Internal media_freed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewState.__Internal media_state_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewState.__Internal media_state_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.Item.__Internal media_subitemtree_added;
+                internal global::VideoLAN.LibVLC.Event._.Item.__Internal media_subitemtree_added;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewCache.__Internal media_player_buffering;
+                internal global::VideoLAN.LibVLC.Event._.NewCache.__Internal media_player_buffering;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewChapter.__Internal media_player_chapter_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewChapter.__Internal media_player_chapter_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewPosition.__Internal media_player_position_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewPosition.__Internal media_player_position_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewTime.__Internal media_player_time_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewTime.__Internal media_player_time_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewTitle.__Internal media_player_title_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewTitle.__Internal media_player_title_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewSeekable.__Internal media_player_seekable_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewSeekable.__Internal media_player_seekable_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewPausable.__Internal media_player_pausable_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewPausable.__Internal media_player_pausable_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewScrambled.__Internal media_player_scrambled_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewScrambled.__Internal media_player_scrambled_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewCount.__Internal media_player_vout;
+                internal global::VideoLAN.LibVLC.Event._.NewCount.__Internal media_player_vout;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.__.__Internal media_list_item_added;
+                internal global::VideoLAN.LibVLC.Event._.__.__Internal media_list_item_added;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.___.__Internal media_list_will_add_item;
+                internal global::VideoLAN.LibVLC.Event._.___.__Internal media_list_will_add_item;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.____.__Internal media_list_item_deleted;
+                internal global::VideoLAN.LibVLC.Event._.____.__Internal media_list_item_deleted;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._._____.__Internal media_list_will_delete_item;
+                internal global::VideoLAN.LibVLC.Event._._____.__Internal media_list_will_delete_item;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.item__.__Internal media_list_player_next_item_set;
+                internal global::VideoLAN.LibVLC.Event._.item__.__Internal media_list_player_next_item_set;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.PszFilename.__Internal media_player_snapshot_taken;
+                internal global::VideoLAN.LibVLC.Event._.PszFilename.__Internal media_player_snapshot_taken;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewLength.__Internal media_player_length_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewLength.__Internal media_player_length_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.______.__Internal vlm_media_event;
+                internal global::VideoLAN.LibVLC.Event._.______.__Internal vlm_media_event;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.NewMedia.__Internal media_player_media_changed;
+                internal global::VideoLAN.LibVLC.Event._.NewMedia.__Internal media_player_media_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._._______.__Internal media_player_es_changed;
+                internal global::VideoLAN.LibVLC.Event._._______.__Internal media_player_es_changed;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.Volume.__Internal media_player_audio_volume;
+                internal global::VideoLAN.LibVLC.Event._.Volume.__Internal media_player_audio_volume;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.Device.__Internal media_player_audio_device;
+                internal global::VideoLAN.LibVLC.Event._.Device.__Internal media_player_audio_device;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.item___.__Internal renderer_discoverer_item_added;
+                internal global::VideoLAN.LibVLC.Event._.item___.__Internal renderer_discoverer_item_added;
 
                 [FieldOffset(0)]
-                internal global::VideoLAN.LibVLC.Generated.Event._.item.__Internal renderer_discoverer_item_deleted;
+                internal global::VideoLAN.LibVLC.Event._.item.__Internal renderer_discoverer_item_deleted;
             }
 
             public unsafe partial class MetaType
@@ -270,7 +270,7 @@ namespace VideoLAN.LibVLC.Generated
                 public partial struct __Internal
                 {
                     [FieldOffset(0)]
-                    internal global::VideoLAN.LibVLC.Generated.MetadataType meta_type;
+                    internal global::VideoLAN.LibVLC.MetadataType meta_type;
                 }
             }
 
@@ -535,7 +535,7 @@ namespace VideoLAN.LibVLC.Generated
                 public partial struct __Internal
                 {
                     [FieldOffset(0)]
-                    internal global::VideoLAN.LibVLC.Generated.TrackType i_type;
+                    internal global::VideoLAN.LibVLC.TrackType i_type;
 
                     [FieldOffset(4)]
                     internal int i_id;
@@ -586,17 +586,17 @@ namespace VideoLAN.LibVLC.Generated
         private Event.__Internal __instance;
         internal Event.__Internal __Instance { get { return __instance; } }
 
-        internal static global::VideoLAN.LibVLC.Generated.Event __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.Event __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.Event(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.Event(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.Event __CreateInstance(global::VideoLAN.LibVLC.Generated.Event.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.Event __CreateInstance(global::VideoLAN.LibVLC.Event.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.Event(native, skipVTables);
+            return new global::VideoLAN.LibVLC.Event(native, skipVTables);
         }
 
-        private Event(global::VideoLAN.LibVLC.Generated.Event.__Internal native, bool skipVTables = false)
+        private Event(global::VideoLAN.LibVLC.Event.__Internal native, bool skipVTables = false)
             : this()
         {
             __instance = native;
@@ -604,10 +604,10 @@ namespace VideoLAN.LibVLC.Generated
 
         private Event(void* native, bool skipVTables = false) : this()
         {
-            __instance = *(global::VideoLAN.LibVLC.Generated.Event.__Internal*) native;
+            __instance = *(global::VideoLAN.LibVLC.Event.__Internal*) native;
         }
 
-        public Event(global::VideoLAN.LibVLC.Generated.Event _0)
+        public Event(global::VideoLAN.LibVLC.Event _0)
             : this()
         {
             var ____arg0 = _0.__Instance;

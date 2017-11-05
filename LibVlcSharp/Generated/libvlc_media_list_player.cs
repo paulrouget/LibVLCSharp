@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>Defines playback modes for playlist.</summary>
     public enum PlaybackMode
@@ -38,29 +38,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.LibvlcMediaListPlayerT> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.LibvlcMediaListPlayerT>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.LibvlcMediaListPlayerT __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.LibvlcMediaListPlayerT(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT __CreateInstance(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.LibvlcMediaListPlayerT __CreateInstance(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT(native, skipVTables);
+            return new global::VideoLAN.LibVLC.LibvlcMediaListPlayerT(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__Internal));
+            *(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private LibvlcMediaListPlayerT(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__Internal native, bool skipVTables = false)
+        private LibvlcMediaListPlayerT(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -132,7 +132,7 @@ namespace VideoLAN.LibVLC.Generated
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_media_list_player_get_state")]
-            internal static extern global::VideoLAN.LibVLC.Generated.VLCState LibvlcMediaListPlayerGetState(global::System.IntPtr p_mlp);
+            internal static extern global::VideoLAN.LibVLC.VLCState LibvlcMediaListPlayerGetState(global::System.IntPtr p_mlp);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -162,21 +162,21 @@ namespace VideoLAN.LibVLC.Generated
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_media_list_player_set_playback_mode")]
-            internal static extern void LibvlcMediaListPlayerSetPlaybackMode(global::System.IntPtr p_mlp, global::VideoLAN.LibVLC.Generated.PlaybackMode e_mode);
+            internal static extern void LibvlcMediaListPlayerSetPlaybackMode(global::System.IntPtr p_mlp, global::VideoLAN.LibVLC.PlaybackMode e_mode);
         }
 
         /// <summary>Create new media_list_player.</summary>
         /// <param name="p_instance">libvlc instance</param>
         /// <returns>media list player instance or NULL on error</returns>
-        public static global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT LibvlcMediaListPlayerNew(global::VideoLAN.LibVLC.Generated.Instance p_instance)
+        public static global::VideoLAN.LibVLC.LibvlcMediaListPlayerT LibvlcMediaListPlayerNew(global::VideoLAN.LibVLC.Instance p_instance)
         {
             var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerNew(__arg0);
-            global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT __result0;
+            global::VideoLAN.LibVLC.LibvlcMediaListPlayerT __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT) global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.LibvlcMediaListPlayerT) global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.LibvlcMediaListPlayerT.__CreateInstance(__ret);
             return __result0;
         }
 
@@ -188,7 +188,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>has been released, then it should not be used again.</para>
         /// </summary>
         /// <param name="p_mlp">media list player instance</param>
-        public static void LibvlcMediaListPlayerRelease(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static void LibvlcMediaListPlayerRelease(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerRelease(__arg0);
@@ -199,7 +199,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_media_list_player_release() to decrement reference count.</para>
         /// </summary>
         /// <param name="p_mlp">media player list object</param>
-        public static void LibvlcMediaListPlayerRetain(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static void LibvlcMediaListPlayerRetain(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerRetain(__arg0);
@@ -208,22 +208,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Return the event manager of this media_list_player.</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>the event manager</returns>
-        public static global::VideoLAN.LibVLC.Generated.EventManager LibvlcMediaListPlayerEventManager(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static global::VideoLAN.LibVLC.EventManager LibvlcMediaListPlayerEventManager(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerEventManager(__arg0);
-            global::VideoLAN.LibVLC.Generated.EventManager __result0;
+            global::VideoLAN.LibVLC.EventManager __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.EventManager) global::VideoLAN.LibVLC.Generated.EventManager.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.EventManager.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.EventManager.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.EventManager) global::VideoLAN.LibVLC.EventManager.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.EventManager.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Replace media player in media_list_player with this instance.</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <param name="p_mi">media player instance</param>
-        public static void LibvlcMediaListPlayerSetMediaPlayer(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.Generated.MediaPlayer p_mi)
+        public static void LibvlcMediaListPlayerSetMediaPlayer(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.MediaPlayer p_mi)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __arg1 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
@@ -234,22 +234,22 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>media player instance</returns>
         /// <remarks>the caller is responsible for releasing the returned instance</remarks>
-        public static global::VideoLAN.LibVLC.Generated.MediaPlayer LibvlcMediaListPlayerGetMediaPlayer(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static global::VideoLAN.LibVLC.MediaPlayer LibvlcMediaListPlayerGetMediaPlayer(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerGetMediaPlayer(__arg0);
-            global::VideoLAN.LibVLC.Generated.MediaPlayer __result0;
+            global::VideoLAN.LibVLC.MediaPlayer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Generated.MediaPlayer) global::VideoLAN.LibVLC.Generated.MediaPlayer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Generated.MediaPlayer.__CreateInstance(__ret);
+            else if (global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap.ContainsKey(__ret))
+                __result0 = (global::VideoLAN.LibVLC.MediaPlayer) global::VideoLAN.LibVLC.MediaPlayer.NativeToManagedMap[__ret];
+            else __result0 = global::VideoLAN.LibVLC.MediaPlayer.__CreateInstance(__ret);
             return __result0;
         }
 
         /// <summary>Set the media list associated with the player</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <param name="p_mlist">list of media</param>
-        public static void LibvlcMediaListPlayerSetMediaList(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.Generated.MediaList p_mlist)
+        public static void LibvlcMediaListPlayerSetMediaList(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.MediaList p_mlist)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __arg1 = ReferenceEquals(p_mlist, null) ? global::System.IntPtr.Zero : p_mlist.__Instance;
@@ -258,7 +258,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Play media list</summary>
         /// <param name="p_mlp">media list player instance</param>
-        public static void LibvlcMediaListPlayerPlay(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static void LibvlcMediaListPlayerPlay(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerPlay(__arg0);
@@ -266,7 +266,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Toggle pause (or resume) media list</summary>
         /// <param name="p_mlp">media list player instance</param>
-        public static void LibvlcMediaListPlayerPause(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static void LibvlcMediaListPlayerPause(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerPause(__arg0);
@@ -275,7 +275,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Is media list playing?</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>true for playing and false for not playing</returns>
-        public static int LibvlcMediaListPlayerIsPlaying(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static int LibvlcMediaListPlayerIsPlaying(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerIsPlaying(__arg0);
@@ -285,7 +285,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Get current libvlc_state of media list player</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>libvlc_state_t for media list player</returns>
-        public static global::VideoLAN.LibVLC.Generated.VLCState LibvlcMediaListPlayerGetState(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static global::VideoLAN.LibVLC.VLCState LibvlcMediaListPlayerGetState(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerGetState(__arg0);
@@ -296,7 +296,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mlp">media list player instance</param>
         /// <param name="i_index">index in media list to play</param>
         /// <returns>0 upon success -1 if the item wasn't found</returns>
-        public static int LibvlcMediaListPlayerPlayItemAtIndex(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp, int i_index)
+        public static int LibvlcMediaListPlayerPlayItemAtIndex(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp, int i_index)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerPlayItemAtIndex(__arg0, i_index);
@@ -307,7 +307,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_mlp">media list player instance</param>
         /// <param name="p_md">the media instance</param>
         /// <returns>0 upon success, -1 if the media is not part of the media list</returns>
-        public static int LibvlcMediaListPlayerPlayItem(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.Generated.Media p_md)
+        public static int LibvlcMediaListPlayerPlayItem(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.Media p_md)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __arg1 = ReferenceEquals(p_md, null) ? global::System.IntPtr.Zero : p_md.__Instance;
@@ -317,7 +317,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Stop playing media list</summary>
         /// <param name="p_mlp">media list player instance</param>
-        public static void LibvlcMediaListPlayerStop(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static void LibvlcMediaListPlayerStop(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerStop(__arg0);
@@ -326,7 +326,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Play next item from media list</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>0 upon success -1 if there is no next item</returns>
-        public static int LibvlcMediaListPlayerNext(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static int LibvlcMediaListPlayerNext(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerNext(__arg0);
@@ -336,7 +336,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Play previous item from media list</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <returns>0 upon success -1 if there is no previous item</returns>
-        public static int LibvlcMediaListPlayerPrevious(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp)
+        public static int LibvlcMediaListPlayerPrevious(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             var __ret = __Internal.LibvlcMediaListPlayerPrevious(__arg0);
@@ -346,7 +346,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <summary>Sets the playback mode for the playlist</summary>
         /// <param name="p_mlp">media list player instance</param>
         /// <param name="e_mode">playback mode specification</param>
-        public static void LibvlcMediaListPlayerSetPlaybackMode(global::VideoLAN.LibVLC.Generated.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.Generated.PlaybackMode e_mode)
+        public static void LibvlcMediaListPlayerSetPlaybackMode(global::VideoLAN.LibVLC.LibvlcMediaListPlayerT p_mlp, global::VideoLAN.LibVLC.PlaybackMode e_mode)
         {
             var __arg0 = ReferenceEquals(p_mlp, null) ? global::System.IntPtr.Zero : p_mlp.__Instance;
             __Internal.LibvlcMediaListPlayerSetPlaybackMode(__arg0, e_mode);

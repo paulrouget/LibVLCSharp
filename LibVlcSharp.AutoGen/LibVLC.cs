@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using CppSharp;
 using CppSharp.AST;
 using CppSharp.Generators;
@@ -32,6 +34,19 @@ namespace libvlcsharp
             // TODO: rename LibvlcCallbackT to VLCCallback
             RenameClasses(ctx);
             RenameEnums(ctx);
+
+            // Do not generate the vlc.h file
+            ctx.TranslationUnits.Single(u =>
+                {
+                    try
+                    {
+                        return u.FileName == "vlc.h";
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }).Ignore = true;
 
             ctx.SetClassAsValueType("Event");
         }
@@ -64,7 +79,7 @@ namespace libvlcsharp
             Rename("LibvlcMediaSlaveT", "MediaSlave");
             Rename("LibvlcTitleDescriptionT", "TitleDescription");
             Rename("LibvlcChapterDescriptionT", "ChapterDescription");
-            Rename("LibvlcAudioOutputT", "AudioOutput");
+            Rename("LibvlcAudioOutputT", "AudioOutputDescription");
             Rename("LibvlcAudioOutputDeviceT", "AudioOutputDevice");
             Rename("LibvlcVideoViewpointT", "VideoViewpoint");
             Rename("LibvlcMediaDiscovererT", "MediaDiscoverer");
@@ -141,7 +156,7 @@ namespace libvlcsharp
             options.GenerateSingleCSharpFile = false;
             //options.CheckSymbols = true;
 
-            var module = options.AddModule("VideoLAN.LibVLC.Generated");
+            var module = options.AddModule("VideoLAN.LibVLC");
             module.SharedLibraryName = "libvlc";
             module.Headers.Add("vlc\\vlc.h");
             module.LibraryDirs.Add(libFolder);

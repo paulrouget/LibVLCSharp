@@ -97,7 +97,7 @@ namespace VideoLAN.LibVLC
         /// <returns>a new object or NULL on error</returns>
         public static global::VideoLAN.LibVLC.LibvlcMediaLibraryT LibvlcMediaLibraryNew(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcMediaLibraryNew(__arg0);
             global::VideoLAN.LibVLC.LibvlcMediaLibraryT __result0;
             if (__ret == IntPtr.Zero) __result0 = null;

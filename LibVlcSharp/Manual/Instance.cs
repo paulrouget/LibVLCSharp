@@ -12,7 +12,7 @@ namespace VideoLAN.LibVLC
     {
         protected bool Equals(Instance other)
         {
-            return NativeReference.Equals(other.NativeReference);
+            return __Instance.Equals(other.__Instance);
         }
 
         public override bool Equals(object obj)
@@ -25,7 +25,7 @@ namespace VideoLAN.LibVLC
 
         public override int GetHashCode()
         {
-            return NativeReference.GetHashCode();
+            return __Instance.GetHashCode();
         }
 
         [StructLayout(LayoutKind.Explicit, Size = 0)]
@@ -109,7 +109,7 @@ namespace VideoLAN.LibVLC
             internal static extern void LibVLCAudioOutputDeviceListRelease(IntPtr list);      
         }
 
-        public IntPtr NativeReference { get; protected set; }
+        public IntPtr __Instance { get; protected set; }
 
         internal static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Instance> NativeToManagedMap 
             = new System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Instance>();
@@ -163,7 +163,7 @@ namespace VideoLAN.LibVLC
             unsafe
             {
                 if (args == null || !args.Any())
-                    NativeReference = Internal.LibVLCNew(argc, null);
+                    __Instance = Internal.LibVLCNew(argc, null);
                 else
                 {
 
@@ -174,14 +174,14 @@ namespace VideoLAN.LibVLC
                         sbyte*[] arr = { (sbyte*)arg0, (sbyte*)arg1, (sbyte*)arg2 };
                         fixed (sbyte** argv = arr)
                         {
-                            NativeReference = Internal.LibVLCNew(argc, argv);
+                            __Instance = Internal.LibVLCNew(argc, argv);
                         }
                     }
                 }
             }
 
             __ownsNativeInstance = true;
-            NativeToManagedMap[NativeReference] = this;
+            NativeToManagedMap[__Instance] = this;
         }
 
         /// <para>Decrement the reference count of a libvlc instance, and destroy it</para>
@@ -193,23 +193,23 @@ namespace VideoLAN.LibVLC
 
         public virtual void Dispose(bool disposing)
         {
-            if (NativeReference == IntPtr.Zero)
+            if (__Instance == IntPtr.Zero)
                 return;
 
-            Internal.LibVLCRelease(NativeReference);
+            Internal.LibVLCRelease(__Instance);
             
-            NativeToManagedMap.TryRemove(NativeReference, out var dummy);
-            NativeReference = IntPtr.Zero;
+            NativeToManagedMap.TryRemove(__Instance, out var dummy);
+            __Instance = IntPtr.Zero;
         }
         
         public static bool operator ==(Instance obj1, Instance obj2)
         {
-            return obj1?.NativeReference == obj2?.NativeReference;
+            return obj1?.__Instance == obj2?.__Instance;
         }
 
         public static bool operator !=(Instance obj1, Instance obj2)
         {
-            return obj1?.NativeReference != obj2?.NativeReference;
+            return obj1?.__Instance != obj2?.__Instance;
         }
 
         /**
@@ -219,7 +219,7 @@ namespace VideoLAN.LibVLC
         */
         public bool AddInterface(string name)
         {
-            return Internal.LibVLCAddInterface(NativeReference, name ?? string.Empty) == 0;
+            return Internal.LibVLCAddInterface(__Instance, name ?? string.Empty) == 0;
         }
         
         /// <summary>
@@ -243,7 +243,7 @@ namespace VideoLAN.LibVLC
         public void SetExitHandler(Action_IntPtr cb, IntPtr opaque)
         {
             var cbFunctionPointer = cb == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cb);
-            Internal.LibVLCSetExitHandler(NativeReference, cbFunctionPointer, opaque);
+            Internal.LibVLCSetExitHandler(__Instance, cbFunctionPointer, opaque);
         }
         
         /// <summary>
@@ -255,7 +255,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>LibVLC 1.1.1 or later</remarks>
         public void SetUserAgent(string name, string http)
         {
-            Internal.LibVLCSetUserAgent(NativeReference, name, http);
+            Internal.LibVLCSetUserAgent(__Instance, name, http);
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>LibVLC 2.1.0 or later.</remarks>
         public void SetAppId(string id, string version, string icon)
         {
-            Internal.LibVLCSetAppId(NativeReference, id, version, icon);
+            Internal.LibVLCSetAppId(__Instance, id, version, icon);
         }
 
         /// <summary>Unsets the logging callback.</summary>
@@ -282,7 +282,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public  void UnsetLog()
         {
-            Internal.LibVLCLogUnset(NativeReference);
+            Internal.LibVLCLogUnset(__Instance);
         }
 
         //TODO: void logSet(LogCb&& logCb)
@@ -295,7 +295,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>LibVLC 2.1.0 or later</remarks>
         public void SetLogFile(IntPtr stream)
         {
-            Internal.LibVLCLogSetFile(NativeReference, stream);
+            Internal.LibVLCLogSetFile(__Instance, stream);
         }
 
         /// <summary>Returns a list of audio filters that are available.</summary>
@@ -311,10 +311,10 @@ namespace VideoLAN.LibVLC
         {
             get
             {
-                return Retrieve(() => Internal.LibVLCAudioFilterListGet(NativeReference),
-                    Marshal.PtrToStructure<ModuleDescription.Internal>,
+                return Retrieve(() => Internal.LibVLCAudioFilterListGet(__Instance),
+                    Marshal.PtrToStructure<ModuleDescription.__Internal>,
                     intern => ModuleDescription.__CreateInstance(intern),
-                    module => module.Next, Internal.LibVLCModuleDescriptionListRelease);
+                    module => module.PNext, Internal.LibVLCModuleDescriptionListRelease);
             }
         }
 
@@ -351,10 +351,10 @@ namespace VideoLAN.LibVLC
         {
             get
             {
-                return Retrieve(() => Internal.LibVLCVideoFilterListGet(NativeReference),
-                    Marshal.PtrToStructure<ModuleDescription.Internal>,
+                return Retrieve(() => Internal.LibVLCVideoFilterListGet(__Instance),
+                    Marshal.PtrToStructure<ModuleDescription.__Internal>,
                     intern => ModuleDescription.__CreateInstance(intern),
-                    module => module.Next, Internal.LibVLCModuleDescriptionListRelease);
+                    module => module.PNext, Internal.LibVLCModuleDescriptionListRelease);
             }
         }
 
@@ -369,8 +369,8 @@ namespace VideoLAN.LibVLC
         {
             get
             {
-                return Retrieve(() => Internal.LibVLCAudioOutputListGet(NativeReference),
-                    Marshal.PtrToStructure<AudioOutputDescription.Internal>,
+                return Retrieve(() => Internal.LibVLCAudioOutputListGet(__Instance),
+                    Marshal.PtrToStructure<AudioOutputDescription.__Internal>,
                     intern => AudioOutputDescription.__CreateInstance(intern),
                     module => module.Next, Internal.LibVLCAudioOutputListRelease);
             }
@@ -399,10 +399,10 @@ namespace VideoLAN.LibVLC
         public IEnumerable<AudioOutputDevice> AudioOutputDevices(string audioOutputName)
         {
 
-            return Retrieve(() => Internal.LibVLCAudioOutputDeviceListGet(NativeReference, audioOutputName), 
-                Marshal.PtrToStructure<AudioOutputDevice.Internal>, 
+            return Retrieve(() => Internal.LibVLCAudioOutputDeviceListGet(__Instance, audioOutputName), 
+                Marshal.PtrToStructure<AudioOutputDevice.__Internal>, 
                 s => AudioOutputDevice.__CreateInstance(s),
-                device => device.Next, Internal.LibVLCAudioOutputDeviceListRelease);
+                device => device.PNext, Internal.LibVLCAudioOutputDeviceListRelease);
         }
         
         public void SetDialogHandlers()

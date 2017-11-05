@@ -8,7 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace VideoLAN.LibVLC.Generated
+namespace VideoLAN.LibVLC
 {
     /// <summary>
     /// <para>@{</para>
@@ -32,29 +32,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.DialogId> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.DialogId>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogId> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogId>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.DialogId __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.DialogId __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.DialogId(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.DialogId(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.DialogId __CreateInstance(global::VideoLAN.LibVLC.Generated.DialogId.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.DialogId __CreateInstance(global::VideoLAN.LibVLC.DialogId.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.DialogId(native, skipVTables);
+            return new global::VideoLAN.LibVLC.DialogId(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.DialogId.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.DialogId.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.DialogId.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.DialogId.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.DialogId.__Internal));
+            *(global::VideoLAN.LibVLC.DialogId.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private DialogId(global::VideoLAN.LibVLC.Generated.DialogId.__Internal native, bool skipVTables = false)
+        private DialogId(global::VideoLAN.LibVLC.DialogId.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -102,29 +102,29 @@ namespace VideoLAN.LibVLC.Generated
         public global::System.IntPtr __Instance { get; protected set; }
 
         protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.DialogCallback> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.Generated.DialogCallback>();
+        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogCallback> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogCallback>();
         protected void*[] __OriginalVTables;
 
         protected bool __ownsNativeInstance;
 
-        internal static global::VideoLAN.LibVLC.Generated.DialogCallback __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.DialogCallback __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.DialogCallback(native.ToPointer(), skipVTables);
+            return new global::VideoLAN.LibVLC.DialogCallback(native.ToPointer(), skipVTables);
         }
 
-        internal static global::VideoLAN.LibVLC.Generated.DialogCallback __CreateInstance(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal native, bool skipVTables = false)
+        internal static global::VideoLAN.LibVLC.DialogCallback __CreateInstance(global::VideoLAN.LibVLC.DialogCallback.__Internal native, bool skipVTables = false)
         {
-            return new global::VideoLAN.LibVLC.Generated.DialogCallback(native, skipVTables);
+            return new global::VideoLAN.LibVLC.DialogCallback(native, skipVTables);
         }
 
-        private static void* __CopyValue(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal native)
+        private static void* __CopyValue(global::VideoLAN.LibVLC.DialogCallback.__Internal native)
         {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal));
-            *(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal*) ret = native;
+            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.DialogCallback.__Internal));
+            *(global::VideoLAN.LibVLC.DialogCallback.__Internal*) ret = native;
             return ret.ToPointer();
         }
 
-        private DialogCallback(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal native, bool skipVTables = false)
+        private DialogCallback(global::VideoLAN.LibVLC.DialogCallback.__Internal native, bool skipVTables = false)
             : this(__CopyValue(native), skipVTables)
         {
             __ownsNativeInstance = true;
@@ -140,17 +140,17 @@ namespace VideoLAN.LibVLC.Generated
 
         public DialogCallback()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.DialogCallback.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
         }
 
-        public DialogCallback(global::VideoLAN.LibVLC.Generated.DialogCallback _0)
+        public DialogCallback(global::VideoLAN.LibVLC.DialogCallback _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.DialogCallback.__Internal));
             __ownsNativeInstance = true;
             NativeToManagedMap[__Instance] = this;
-            *((global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.Generated.DialogCallback.__Internal*) _0.__Instance);
+            *((global::VideoLAN.LibVLC.DialogCallback.__Internal*) __Instance) = *((global::VideoLAN.LibVLC.DialogCallback.__Internal*) _0.__Instance);
         }
 
         public void Dispose()
@@ -162,7 +162,7 @@ namespace VideoLAN.LibVLC.Generated
         {
             if (__Instance == IntPtr.Zero)
                 return;
-            global::VideoLAN.LibVLC.Generated.DialogCallback __dummy;
+            global::VideoLAN.LibVLC.DialogCallback __dummy;
             NativeToManagedMap.TryRemove(__Instance, out __dummy);
             if (__ownsNativeInstance)
                 Marshal.FreeHGlobal(__Instance);
@@ -209,7 +209,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <param name="p_cbs">a pointer to callbacks, or NULL to unregister callbacks.</param>
         /// <param name="p_data">opaque pointer for the callback</param>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static void LibvlcDialogSetCallbacks(global::VideoLAN.LibVLC.Generated.Instance p_instance, global::VideoLAN.LibVLC.Generated.DialogCallback p_cbs, global::System.IntPtr p_data)
+        public static void LibvlcDialogSetCallbacks(global::VideoLAN.LibVLC.Instance p_instance, global::VideoLAN.LibVLC.DialogCallback p_cbs, global::System.IntPtr p_data)
         {
             var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __arg1 = ReferenceEquals(p_cbs, null) ? global::System.IntPtr.Zero : p_cbs.__Instance;
@@ -218,7 +218,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Associate an opaque pointer with the dialog id</summary>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static void LibvlcDialogSetContext(global::VideoLAN.LibVLC.Generated.DialogId p_id, global::System.IntPtr p_context)
+        public static void LibvlcDialogSetContext(global::VideoLAN.LibVLC.DialogId p_id, global::System.IntPtr p_context)
         {
             var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
             __Internal.LibvlcDialogSetContext(__arg0, p_context);
@@ -226,7 +226,7 @@ namespace VideoLAN.LibVLC.Generated
 
         /// <summary>Return the opaque pointer associated with the dialog id</summary>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static global::System.IntPtr LibvlcDialogGetContext(global::VideoLAN.LibVLC.Generated.DialogId p_id)
+        public static global::System.IntPtr LibvlcDialogGetContext(global::VideoLAN.LibVLC.DialogId p_id)
         {
             var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
             var __ret = __Internal.LibvlcDialogGetContext(__arg0);
@@ -244,7 +244,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_dialog_cbs.pf_display_login</para>
         /// <para>LibVLC 3.0.0 and later.</para>
         /// </remarks>
-        public static int LibvlcDialogPostLogin(global::VideoLAN.LibVLC.Generated.DialogId p_id, string psz_username, string psz_password, bool b_store)
+        public static int LibvlcDialogPostLogin(global::VideoLAN.LibVLC.DialogId p_id, string psz_username, string psz_password, bool b_store)
         {
             var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
             var __ret = __Internal.LibvlcDialogPostLogin(__arg0, psz_username, psz_password, b_store);
@@ -260,7 +260,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_dialog_cbs.pf_display_question</para>
         /// <para>LibVLC 3.0.0 and later.</para>
         /// </remarks>
-        public static int LibvlcDialogPostAction(global::VideoLAN.LibVLC.Generated.DialogId p_id, int i_action)
+        public static int LibvlcDialogPostAction(global::VideoLAN.LibVLC.DialogId p_id, int i_action)
         {
             var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
             var __ret = __Internal.LibvlcDialogPostAction(__arg0, i_action);
@@ -275,7 +275,7 @@ namespace VideoLAN.LibVLC.Generated
         /// <para>libvlc_dialog_cbs.pf_cancel</para>
         /// <para>LibVLC 3.0.0 and later.</para>
         /// </remarks>
-        public static int LibvlcDialogDismiss(global::VideoLAN.LibVLC.Generated.DialogId p_id)
+        public static int LibvlcDialogDismiss(global::VideoLAN.LibVLC.DialogId p_id)
         {
             var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
             var __ret = __Internal.LibvlcDialogDismiss(__arg0);

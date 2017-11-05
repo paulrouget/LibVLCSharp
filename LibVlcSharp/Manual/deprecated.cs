@@ -524,7 +524,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>Use libvlc_audio_output_device_list_get() instead.</remarks>
         public static int LibvlcAudioOutputDeviceCount(global::VideoLAN.LibVLC.Instance p_instance, string psz_audio_output)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceCount(__arg0, psz_audio_output);
             return __ret;
         }
@@ -534,7 +534,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>Use libvlc_audio_output_device_list_get() instead.</remarks>
         public static sbyte* LibvlcAudioOutputDeviceLongname(global::VideoLAN.LibVLC.Instance p_instance, string psz_output, int i_device)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceLongname(__arg0, psz_output, i_device);
             return __ret;
         }
@@ -544,7 +544,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>Use libvlc_audio_output_device_list_get() instead.</remarks>
         public static sbyte* LibvlcAudioOutputDeviceId(global::VideoLAN.LibVLC.Instance p_instance, string psz_audio_output, int i_device)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcAudioOutputDeviceId(__arg0, psz_audio_output, i_device);
             return __ret;
         }
@@ -651,7 +651,7 @@ namespace VideoLAN.LibVLC
         /// <remarks>Use libvlc_media_discoverer_new() and libvlc_media_discoverer_start().</remarks>
         public static global::VideoLAN.LibVLC.MediaDiscoverer LibvlcMediaDiscovererNewFromName(global::VideoLAN.LibVLC.Instance p_inst, string psz_name)
         {
-            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.NativeReference;
+            var __arg0 = ReferenceEquals(p_inst, null) ? global::System.IntPtr.Zero : p_inst.__Instance;
             var __ret = __Internal.LibvlcMediaDiscovererNewFromName(__arg0, psz_name);
             global::VideoLAN.LibVLC.MediaDiscoverer __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -705,7 +705,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static void LibvlcWait(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             __Internal.LibvlcWait(__arg0);
         }
 
@@ -717,7 +717,7 @@ namespace VideoLAN.LibVLC
         /// <returns>always -1</returns>
         public static uint LibvlcGetLogVerbosity(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcGetLogVerbosity(__arg0);
             return __ret;
         }
@@ -730,7 +730,7 @@ namespace VideoLAN.LibVLC
         /// <param name="level">ignored</param>
         public static void LibvlcSetLogVerbosity(global::VideoLAN.LibVLC.Instance p_instance, uint level)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             __Internal.LibvlcSetLogVerbosity(__arg0, level);
         }
 
@@ -742,7 +742,7 @@ namespace VideoLAN.LibVLC
         /// <returns>an unique pointer or NULL on error</returns>
         public static global::VideoLAN.LibVLC.Log LibvlcLogOpen(global::VideoLAN.LibVLC.Instance p_instance)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             var __ret = __Internal.LibvlcLogOpen(__arg0);
             global::VideoLAN.LibVLC.Log __result0;
             if (__ret == IntPtr.Zero) __result0 = null;
@@ -858,7 +858,7 @@ namespace VideoLAN.LibVLC
         /// </remarks>
         public static void LibvlcPlaylistPlay(global::VideoLAN.LibVLC.Instance p_instance, int i_id, int i_options, sbyte** ppsz_options)
         {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.__Instance;
             __Internal.LibvlcPlaylistPlay(__arg0, i_id, i_options, ppsz_options);
         }
     }
