@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
+using VideoLAN.LibVLC.Manual;
 
 namespace VideoLAN.LibVLC
 {
@@ -15,60 +16,8 @@ namespace VideoLAN.LibVLC
     /// <para></para>
     /// <para>LibVLC dialog external API</para>
     /// </summary>
-    public enum DialogQuestionType
-    {
-        Normal = 0,
-        Warning = 1,
-        Critical = 2
-    }
-
-    public unsafe partial class DialogId
-    {
-        [StructLayout(LayoutKind.Explicit, Size = 0)]
-        public partial struct __Internal
-        {
-        }
-
-        public global::System.IntPtr __Instance { get; protected set; }
-
-        protected int __PointerAdjustment;
-        internal static readonly global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogId> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::VideoLAN.LibVLC.DialogId>();
-        protected void*[] __OriginalVTables;
-
-        protected bool __ownsNativeInstance;
-
-        internal static global::VideoLAN.LibVLC.DialogId __CreateInstance(global::System.IntPtr native, bool skipVTables = false)
-        {
-            return new global::VideoLAN.LibVLC.DialogId(native.ToPointer(), skipVTables);
-        }
-
-        internal static global::VideoLAN.LibVLC.DialogId __CreateInstance(global::VideoLAN.LibVLC.DialogId.__Internal native, bool skipVTables = false)
-        {
-            return new global::VideoLAN.LibVLC.DialogId(native, skipVTables);
-        }
-
-        private static void* __CopyValue(global::VideoLAN.LibVLC.DialogId.__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(global::VideoLAN.LibVLC.DialogId.__Internal));
-            *(global::VideoLAN.LibVLC.DialogId.__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private DialogId(global::VideoLAN.LibVLC.DialogId.__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            NativeToManagedMap[__Instance] = this;
-        }
-
-        protected DialogId(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new global::System.IntPtr(native);
-        }
-    }
-
+    
+        
     /// <summary>Dialog callbacks to be implemented</summary>
     public unsafe partial class DialogCallback : IDisposable
     {
@@ -174,11 +123,7 @@ namespace VideoLAN.LibVLC
     {
         public partial struct __Internal
         {
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_dialog_set_callbacks")]
-            internal static extern void LibvlcDialogSetCallbacks(global::System.IntPtr p_instance, global::System.IntPtr p_cbs, global::System.IntPtr p_data);
-
+            
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_dialog_set_context")]
@@ -188,50 +133,35 @@ namespace VideoLAN.LibVLC
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint="libvlc_dialog_get_context")]
             internal static extern global::System.IntPtr LibvlcDialogGetContext(global::System.IntPtr p_id);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_dialog_post_login")]
-            internal static extern int LibvlcDialogPostLogin(global::System.IntPtr p_id, [MarshalAs(UnmanagedType.LPStr)] string psz_username, [MarshalAs(UnmanagedType.LPStr)] string psz_password, bool b_store);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_dialog_post_action")]
-            internal static extern int LibvlcDialogPostAction(global::System.IntPtr p_id, int i_action);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_dialog_dismiss")]
-            internal static extern int LibvlcDialogDismiss(global::System.IntPtr p_id);
         }
 
         /// <summary>Register callbacks in order to handle VLC dialogs</summary>
         /// <param name="p_cbs">a pointer to callbacks, or NULL to unregister callbacks.</param>
         /// <param name="p_data">opaque pointer for the callback</param>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static void LibvlcDialogSetCallbacks(global::VideoLAN.LibVLC.Instance p_instance, global::VideoLAN.LibVLC.DialogCallback p_cbs, global::System.IntPtr p_data)
-        {
-            var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
-            var __arg1 = ReferenceEquals(p_cbs, null) ? global::System.IntPtr.Zero : p_cbs.__Instance;
-            __Internal.LibvlcDialogSetCallbacks(__arg0, __arg1, p_data);
-        }
+        //public static void LibvlcDialogSetCallbacks(global::VideoLAN.LibVLC.Manual.Instance p_instance, global::VideoLAN.LibVLC.DialogCallback p_cbs, global::System.IntPtr p_data)
+        //{
+        //    var __arg0 = ReferenceEquals(p_instance, null) ? global::System.IntPtr.Zero : p_instance.NativeReference;
+        //    var __arg1 = ReferenceEquals(p_cbs, null) ? global::System.IntPtr.Zero : p_cbs.__Instance;
+        //    Instance.Native.LibvlcDialogSetCallbacks(__arg0, __arg1, p_data);
+        //}
 
         /// <summary>Associate an opaque pointer with the dialog id</summary>
         /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static void LibvlcDialogSetContext(global::VideoLAN.LibVLC.DialogId p_id, global::System.IntPtr p_context)
-        {
-            var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
-            __Internal.LibvlcDialogSetContext(__arg0, p_context);
-        }
+        //public static void LibvlcDialogSetContext(global::VideoLAN.LibVLC.DialogId p_id, global::System.IntPtr p_context)
+        //{
+        //    var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.NativeReference;
+        //    __Internal.LibvlcDialogSetContext(__arg0, p_context);
+        //}
 
-        /// <summary>Return the opaque pointer associated with the dialog id</summary>
-        /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        public static global::System.IntPtr LibvlcDialogGetContext(global::VideoLAN.LibVLC.DialogId p_id)
-        {
-            var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
-            var __ret = __Internal.LibvlcDialogGetContext(__arg0);
-            return __ret;
-        }
+        ///// <summary>Return the opaque pointer associated with the dialog id</summary>
+        ///// <remarks>LibVLC 3.0.0 and later.</remarks>
+        //public static global::System.IntPtr LibvlcDialogGetContext(global::VideoLAN.LibVLC.DialogId p_id)
+        //{
+        //    var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.NativeReference;
+        //    var __ret = __Internal.LibvlcDialogGetContext(__arg0);
+        //    return __ret;
+        //}
 
         /// <summary>Post a login answer</summary>
         /// <param name="p_id">id of the dialog</param>
@@ -243,13 +173,13 @@ namespace VideoLAN.LibVLC
         /// <para>After this call, p_id won't be valid anymore</para>
         /// <para>libvlc_dialog_cbs.pf_display_login</para>
         /// <para>LibVLC 3.0.0 and later.</para>
-        /// </remarks>
-        public static int LibvlcDialogPostLogin(global::VideoLAN.LibVLC.DialogId p_id, string psz_username, string psz_password, bool b_store)
-        {
-            var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
-            var __ret = __Internal.LibvlcDialogPostLogin(__arg0, psz_username, psz_password, b_store);
-            return __ret;
-        }
+        ///// </remarks>
+        //public static int LibvlcDialogPostLogin(global::VideoLAN.LibVLC.DialogId p_id, string psz_username, string psz_password, bool b_store)
+        //{
+        //    var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.NativeReference;
+        //    var __ret = __Internal.LibvlcDialogPostLogin(__arg0, psz_username, psz_password, b_store);
+        //    return __ret;
+        //}
 
         /// <summary>Post a question answer</summary>
         /// <param name="p_id">id of the dialog</param>
@@ -260,12 +190,12 @@ namespace VideoLAN.LibVLC
         /// <para>libvlc_dialog_cbs.pf_display_question</para>
         /// <para>LibVLC 3.0.0 and later.</para>
         /// </remarks>
-        public static int LibvlcDialogPostAction(global::VideoLAN.LibVLC.DialogId p_id, int i_action)
-        {
-            var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
-            var __ret = __Internal.LibvlcDialogPostAction(__arg0, i_action);
-            return __ret;
-        }
+        //public static int LibvlcDialogPostAction(global::VideoLAN.LibVLC.DialogId p_id, int i_action)
+        //{
+        //    var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.NativeReference;
+        //    var __ret = __Internal.LibvlcDialogPostAction(__arg0, i_action);
+        //    return __ret;
+        //}
 
         /// <summary>Dismiss a dialog</summary>
         /// <param name="p_id">id of the dialog</param>
@@ -275,11 +205,11 @@ namespace VideoLAN.LibVLC
         /// <para>libvlc_dialog_cbs.pf_cancel</para>
         /// <para>LibVLC 3.0.0 and later.</para>
         /// </remarks>
-        public static int LibvlcDialogDismiss(global::VideoLAN.LibVLC.DialogId p_id)
-        {
-            var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.__Instance;
-            var __ret = __Internal.LibvlcDialogDismiss(__arg0);
-            return __ret;
-        }
+        //public static int LibvlcDialogDismiss(global::VideoLAN.LibVLC.DialogId p_id)
+        //{
+        //    var __arg0 = ReferenceEquals(p_id, null) ? global::System.IntPtr.Zero : p_id.NativeReference;
+        //    var __ret = __Internal.LibvlcDialogDismiss(__arg0);
+        //    return __ret;
+        //}
     }
 }

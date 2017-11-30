@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using VideoLAN.LibVLC.Events;
 using VideoLAN.LibVLC.Structures;
@@ -24,8 +25,10 @@ namespace VideoLAN.LibVLC
             if (obj.GetType() != this.GetType()) return false;
             return Equals((Instance) obj);
         }
+
         LogCallback _logCallback;
         readonly object _logLock = new object();
+        IntPtr _dialogCbsPtr;
         /// <summary>
         /// The real log event handlers.
         /// </summary>
@@ -59,7 +62,8 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_add_intf")]
-            internal static extern int LibVLCAddInterface(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string name);
+            internal static extern int
+                LibVLCAddInterface(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string name);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
@@ -69,13 +73,14 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_set_user_agent")]
-            internal static extern void LibVLCSetUserAgent(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string name, 
+            internal static extern void LibVLCSetUserAgent(IntPtr instance,
+                [MarshalAs(UnmanagedType.LPStr)] string name,
                 [MarshalAs(UnmanagedType.LPStr)] string http);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_set_app_id")]
-            internal static extern void LibVLCSetAppId(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string id, 
+            internal static extern void LibVLCSetAppId(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string id,
                 [MarshalAs(UnmanagedType.LPStr)] string version, [MarshalAs(UnmanagedType.LPStr)] string icon);
 
             [SuppressUnmanagedCodeSecurity]
@@ -91,7 +96,8 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 CharSet = CharSet.Ansi, EntryPoint = "libvlc_log_get_context")]
-            internal static extern void LibVLCLogGetContext(IntPtr ctx, out IntPtr module, out IntPtr file, out UIntPtr line);
+            internal static extern void LibVLCLogGetContext(IntPtr ctx, out IntPtr module, out IntPtr file,
+                out UIntPtr line);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
@@ -126,7 +132,8 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_audio_output_device_list_get")]
-            internal static extern IntPtr LibVLCAudioOutputDeviceListGet(IntPtr instance, [MarshalAs(UnmanagedType.LPStr)] string aout);
+            internal static extern IntPtr LibVLCAudioOutputDeviceListGet(IntPtr instance,
+                [MarshalAs(UnmanagedType.LPStr)] string aout);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
@@ -136,15 +143,22 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_discoverer_list_get")]
-            internal static extern ulong LibVLCMediaDiscovererListGet(IntPtr instance, MediaDiscoverer.Category category, ref IntPtr pppServices);
+            internal static extern ulong LibVLCMediaDiscovererListGet(IntPtr instance, MediaDiscovererCategory category,
+                ref IntPtr pppServices);
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_discoverer_list_release")]
             internal static extern void LibVLCMediaDiscovererListRelease(IntPtr ppServices, ulong count);
             
+            [SuppressUnmanagedCodeSecurity]
+            [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
+                EntryPoint = "libvlc_dialog_set_callbacks")]
+            internal static extern void LibVLCDialogSetCallbacks(IntPtr instance, IntPtr callbacks, IntPtr data);
+
+
             #region Windows
-            
+
             /// <summary>
             /// Compute the size required by vsprintf to print the parameters.
             /// </summary>
@@ -152,7 +166,7 @@ namespace VideoLAN.LibVLC
             /// <param name="ptr"></param>
             /// <returns></returns>
             [DllImport(Windows, CallingConvention = CallingConvention.Cdecl)]
-            public static extern int _vscprintf(string format,IntPtr ptr);
+            public static extern int _vscprintf(string format, IntPtr ptr);
 
             /// <summary>
             /// Format a string using printf style markers
@@ -170,27 +184,31 @@ namespace VideoLAN.LibVLC
                 string format,
                 IntPtr args);
 
-            [DllImport(Windows, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode, SetLastError = true)]
+            [DllImport(Windows, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Unicode,
+                SetLastError = true)]
             public static extern int _wfopen_s(out IntPtr pFile, string filename, string mode = Write);
 
-            [DllImport(Windows, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fclose", SetLastError = true)]
+            [DllImport(Windows, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fclose",
+                SetLastError = true)]
             public static extern int fcloseWindows(IntPtr stream);
 
             #endregion
 
             #region Linux
 
-            [DllImport(Linux, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fopen", CharSet = CharSet.Ansi, SetLastError = true)]
+            [DllImport(Linux, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fopen", CharSet = CharSet.Ansi,
+                SetLastError = true)]
             public static extern IntPtr fopenLinux(string filename, string mode = Write);
 
-            [DllImport(Linux, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fclose", CharSet = CharSet.Ansi, SetLastError = true)]
+            [DllImport(Linux, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fclose",
+                CharSet = CharSet.Ansi, SetLastError = true)]
             public static extern int fcloseLinux(IntPtr file);
 
             #endregion
 
             #region Mac
-            
-            [DllImport(Mac, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fopen", SetLastError = true)] 
+
+            [DllImport(Mac, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fopen", SetLastError = true)]
             public static extern IntPtr fopenMac(string path, string mode = Write);
 
             [DllImport(Mac, CallingConvention = CallingConvention.Cdecl, EntryPoint = "fclose", SetLastError = true)]
@@ -203,8 +221,8 @@ namespace VideoLAN.LibVLC
             const string Mac = "libSystem";
             const string Write = "w";
         }
-    
-        internal static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Instance> NativeToManagedMap 
+
+        internal static readonly System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Instance> NativeToManagedMap
             = new System.Collections.Concurrent.ConcurrentDictionary<IntPtr, Instance>();
 
         protected bool __ownsNativeInstance;
@@ -262,7 +280,7 @@ namespace VideoLAN.LibVLC
                         arg1 = Encoding.ASCII.GetBytes(args[1]),
                         arg2 = Encoding.ASCII.GetBytes(args[2]))
                     {
-                        sbyte*[] arr = { (sbyte*)arg0, (sbyte*)arg1, (sbyte*)arg2 };
+                        sbyte*[] arr = {(sbyte*) arg0, (sbyte*) arg1, (sbyte*) arg2};
                         fixed (sbyte** argv = arr)
                         {
                             return Native.LibVLCNew(argc, argv);
@@ -300,7 +318,7 @@ namespace VideoLAN.LibVLC
         {
             return Native.LibVLCAddInterface(NativeReference, name ?? string.Empty) == 0;
         }
-        
+
         /// <summary>
         /// <para>Registers a callback for the LibVLC exit event. This is mostly useful if</para>
         /// <para>the VLC playlist and/or at least one interface are started with</para>
@@ -324,7 +342,7 @@ namespace VideoLAN.LibVLC
             var cbFunctionPointer = cb == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(cb);
             Native.LibVLCSetExitHandler(NativeReference, cbFunctionPointer, opaque);
         }
-        
+
         /// <summary>
         /// <para>Sets the application name. LibVLC passes this as the user agent string</para>
         /// <para>when a protocol requires it.</para>
@@ -362,7 +380,7 @@ namespace VideoLAN.LibVLC
         public void UnsetLog()
         {
             Native.LibVLCLogUnset(NativeReference);
-            if(!CloseLogFile())
+            if (!CloseLogFile())
                 throw new VLCException("Could not close log file");
         }
 
@@ -374,7 +392,7 @@ namespace VideoLAN.LibVLC
         {
             if (_logFileHandle == IntPtr.Zero) return true;
 
-            if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 return Native.fcloseWindows(_logFileHandle) == 0;
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 return Native.fcloseLinux(_logFileHandle) == 0;
@@ -517,7 +535,7 @@ namespace VideoLAN.LibVLC
                     module => module.Next, Native.LibVLCAudioOutputListRelease);
             }
         }
-        
+
         /// <summary>Gets a list of audio output devices for a given audio output module,</summary>
         /// <param name="audioOutputName">
         /// <para>audio output name</para>
@@ -541,8 +559,8 @@ namespace VideoLAN.LibVLC
         public AudioOutputDevice[] AudioOutputDevices(string audioOutputName)
         {
 
-            return Retrieve(() => Native.LibVLCAudioOutputDeviceListGet(NativeReference, audioOutputName), 
-                Marshal.PtrToStructure<AudioOutputDevice.Internal>, 
+            return Retrieve(() => Native.LibVLCAudioOutputDeviceListGet(NativeReference, audioOutputName),
+                Marshal.PtrToStructure<AudioOutputDevice.Internal>,
                 s => AudioOutputDevice.__CreateInstance(s),
                 device => device.Next, Native.LibVLCAudioOutputDeviceListRelease);
         }
@@ -560,7 +578,7 @@ namespace VideoLAN.LibVLC
 
             var mediaDiscovererDescription = new MediaDiscoverer.Description[(int)count];
 
-            for (var i = 0; i < (int)count; i++)
+            for (var i = 0; i < (int) count; i++)
             {
                 var ptr = Marshal.ReadIntPtr(arrayResultPtr, i * IntPtr.Size);
                 var managedStruct = (MediaDiscoverer.Description)Marshal.PtrToStructure(ptr, typeof(MediaDiscoverer.Description));
@@ -572,8 +590,100 @@ namespace VideoLAN.LibVLC
             return mediaDiscovererDescription;
         }
 
-        public void SetDialogHandlers()
+        readonly Dictionary<IntPtr, CancellationTokenSource> _cts = new Dictionary<IntPtr, CancellationTokenSource>();
+
+        public void SetDialogHandlers2(DisplayError error, DisplayLogin login, DisplayQuestion question,
+            DisplayProgress displayProgress, UpdateProgress updateProgress)
         {
+            if (error == null) throw new ArgumentNullException(nameof(error));
+            if (login == null) throw new ArgumentNullException(nameof(login));
+            if (question == null) throw new ArgumentNullException(nameof(question));
+            if (displayProgress == null) throw new ArgumentNullException(nameof(displayProgress));
+            if (updateProgress == null) throw new ArgumentNullException(nameof(updateProgress));
+
+            var dialogCbs = new DialogCallbacks
+            {
+                DisplayError = (data, title, text) =>
+                {
+                    // no dialogId ?!
+                    error(title, text);
+                },
+                DisplayLogin = (data, id, title, text, username, store) =>
+                {
+                    var cts = new CancellationTokenSource();
+                    _cts.Add(id, cts);
+                    login(title, text, username, store, cts.Token);
+                },
+                DisplayQuestion = (data, id, title, text, type, cancelText, firstActionText, secondActionText) =>
+                {
+                    var cts = new CancellationTokenSource();
+                    _cts.Add(id, cts);
+                    question(title, text, type, cancelText, firstActionText, secondActionText, cts.Token);
+
+                },
+                DisplayProgress = (data, id, title, text, indeterminate, position, cancelText) =>
+                {
+                    var cts = new CancellationTokenSource();
+                    _cts.Add(id, cts);
+                    displayProgress(title, text, indeterminate, position, cancelText, cts.Token);
+                },
+                Cancel = (data, id) =>
+                {
+                    if (_cts.TryGetValue(id, out var token))
+                    {
+                        token.Cancel();
+                        _cts.Remove(id);
+                    }
+                },
+                UpdateProgress = (data, id, position, text) =>
+                {
+                    updateProgress(position, text);
+                }
+            };
+
+            var dialogCbsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
+
+            Marshal.StructureToPtr(dialogCbs, dialogCbsPtr, true);
+
+            Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
+        }
+
+
+        public void SetDialogHandlers(DisplayErrorCallback error, DisplayLoginCallback login, DisplayQuestionCallback question, DisplayProgressCallback displayProgress, 
+            CancelCallback cancel, UpdateProgressCallback updateProgress)
+        {
+            if(error == null) throw new ArgumentNullException(nameof(error));
+            if(login == null) throw new ArgumentNullException(nameof(login));
+            if(question == null) throw new ArgumentNullException(nameof(question));
+            if(displayProgress == null) throw new ArgumentNullException(nameof(displayProgress));
+            if(cancel == null) throw new ArgumentNullException(nameof(cancel));
+            if(updateProgress == null) throw new ArgumentNullException(nameof(updateProgress));
+
+            var dialogCbs = new DialogCallbacks
+            {
+                DisplayError = error,
+                DisplayLogin = login,
+                DisplayQuestion = question,
+                DisplayProgress = displayProgress,
+                Cancel = cancel,
+                UpdateProgress = updateProgress
+            };
+
+            _dialogCbsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
+            
+            Marshal.StructureToPtr(dialogCbs, _dialogCbsPtr, true);
+
+            Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
+        }
+
+        /// <summary>
+        /// Unset all callbacks
+        /// </summary>
+        public void UnsetDialogHandlers()
+        {
+            if(_dialogCbsPtr != IntPtr.Zero)
+                Marshal.FreeHGlobal(_dialogCbsPtr);
+            Native.LibVLCDialogSetCallbacks(NativeReference, IntPtr.Zero, IntPtr.Zero);
         }
 
         TU[] Retrieve<T, TU>(Func<IntPtr> getRef, Func<IntPtr, T> retrieve,
@@ -617,7 +727,7 @@ namespace VideoLAN.LibVLC
             {
                 Native.vsprintf(utf8Buffer, format, args);
 
-                formattedDecodedMessage = (string)Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(utf8Buffer);
+                formattedDecodedMessage = (string) Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(utf8Buffer);
             }
             finally
             {
@@ -627,7 +737,8 @@ namespace VideoLAN.LibVLC
             GetLogContext(ctx, out var module, out var file, out var line);
 
             // Do the notification on another thread, so that VLC is not interrupted by the logging
-            Task.Run(() => _log?.Invoke(NativeReference, new LogEventArgs(level, formattedDecodedMessage, module, file, line)));
+            Task.Run(() =>
+                _log?.Invoke(NativeReference, new LogEventArgs(level, formattedDecodedMessage, module, file, line)));
         }
 
         /// <summary>
@@ -649,7 +760,7 @@ namespace VideoLAN.LibVLC
         {
             Native.LibVLCLogGetContext(logContext, out var modulePtr, out var filePtr, out var linePtr);
 
-            line = linePtr == UIntPtr.Zero ? null : (uint?)linePtr.ToUInt32();
+            line = linePtr == UIntPtr.Zero ? null : (uint?) linePtr.ToUInt32();
             module = Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(modulePtr) as string;
             file = Utf8StringMarshaler.GetInstance().MarshalNativeToManaged(filePtr) as string;
         }
@@ -658,6 +769,7 @@ namespace VideoLAN.LibVLC
     /// <summary>Logging messages level.</summary>
     /// <remarks>Future LibVLC versions may define new levels.</remarks>
     public enum LogLevel
+
     {
         /// <summary>Debug message</summary>
         Debug = 0,
