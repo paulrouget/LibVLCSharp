@@ -296,6 +296,7 @@ namespace VideoLAN.LibVLC
         public override void Dispose()
         {
             UnsetLog();
+            UnsetDialogHandlers();
             base.Dispose();
         }
 
@@ -592,7 +593,7 @@ namespace VideoLAN.LibVLC
 
         readonly Dictionary<IntPtr, CancellationTokenSource> _cts = new Dictionary<IntPtr, CancellationTokenSource>();
 
-        public void SetDialogHandlers2(DisplayError error, DisplayLogin login, DisplayQuestion question,
+        public void SetDialogHandlers(DisplayError error, DisplayLogin login, DisplayQuestion question,
             DisplayProgress displayProgress, UpdateProgress updateProgress)
         {
             if (error == null) throw new ArgumentNullException(nameof(error));
@@ -611,21 +612,24 @@ namespace VideoLAN.LibVLC
                 DisplayLogin = (data, id, title, text, username, store) =>
                 {
                     var cts = new CancellationTokenSource();
+                    var dlg = new Dialog(new DialogId { NativeReference = id });
                     _cts.Add(id, cts);
-                    login(title, text, username, store, cts.Token);
+                    login(dlg, title, text, username, store, cts.Token);
                 },
                 DisplayQuestion = (data, id, title, text, type, cancelText, firstActionText, secondActionText) =>
                 {
                     var cts = new CancellationTokenSource();
+                    var dlg = new Dialog(new DialogId { NativeReference = id });
                     _cts.Add(id, cts);
-                    question(title, text, type, cancelText, firstActionText, secondActionText, cts.Token);
+                    question(dlg, title, text, type, cancelText, firstActionText, secondActionText, cts.Token);
 
                 },
                 DisplayProgress = (data, id, title, text, indeterminate, position, cancelText) =>
                 {
                     var cts = new CancellationTokenSource();
+                    var dlg = new Dialog(new DialogId { NativeReference = id });
                     _cts.Add(id, cts);
-                    displayProgress(title, text, indeterminate, position, cancelText, cts.Token);
+                    displayProgress(dlg, title, text, indeterminate, position, cancelText, cts.Token);
                 },
                 Cancel = (data, id) =>
                 {
@@ -637,45 +641,18 @@ namespace VideoLAN.LibVLC
                 },
                 UpdateProgress = (data, id, position, text) =>
                 {
-                    updateProgress(position, text);
+                    var dlg = new Dialog(new DialogId { NativeReference = id });
+                    updateProgress(dlg, position, text);
                 }
             };
 
-            var dialogCbsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
-
-            Marshal.StructureToPtr(dialogCbs, dialogCbsPtr, true);
-
-            Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
-        }
-
-
-        public void SetDialogHandlers(DisplayErrorCallback error, DisplayLoginCallback login, DisplayQuestionCallback question, DisplayProgressCallback displayProgress, 
-            CancelCallback cancel, UpdateProgressCallback updateProgress)
-        {
-            if(error == null) throw new ArgumentNullException(nameof(error));
-            if(login == null) throw new ArgumentNullException(nameof(login));
-            if(question == null) throw new ArgumentNullException(nameof(question));
-            if(displayProgress == null) throw new ArgumentNullException(nameof(displayProgress));
-            if(cancel == null) throw new ArgumentNullException(nameof(cancel));
-            if(updateProgress == null) throw new ArgumentNullException(nameof(updateProgress));
-
-            var dialogCbs = new DialogCallbacks
-            {
-                DisplayError = error,
-                DisplayLogin = login,
-                DisplayQuestion = question,
-                DisplayProgress = displayProgress,
-                Cancel = cancel,
-                UpdateProgress = updateProgress
-            };
-
             _dialogCbsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
-            
+
             Marshal.StructureToPtr(dialogCbs, _dialogCbsPtr, true);
 
             Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
         }
-
+        
         /// <summary>
         /// Unset all callbacks
         /// </summary>
