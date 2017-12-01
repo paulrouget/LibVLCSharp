@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Threading;
@@ -10,7 +9,7 @@ namespace VideoLAN.LibVLC.Manual
     //TODO: v3
     public class Dialog : IDisposable
     {
-        private IntPtr _id;
+        IntPtr _id;
         
         struct Native
         {
@@ -31,11 +30,6 @@ namespace VideoLAN.LibVLC.Manual
             internal static extern int LibVLCDialogDismiss(IntPtr dialogId);
         }
 
-        //public Dialog() : this(new DialogId { NativeReference = Marshal.AllocHGlobal(Marshal.SizeOf<DialogId>()) })
-        //{    
-        //}
-
-
         Dialog(IntPtr id)
         {
             if(id == IntPtr.Zero)
@@ -43,13 +37,10 @@ namespace VideoLAN.LibVLC.Manual
             _id = id;
         }
 
-        public Dialog(DialogId id)
+        public Dialog(DialogId id) : this(id.NativeReference)
         {
-            _id = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
-
-            Marshal.StructureToPtr(id, _id, true);
         }
-        
+
         public void Dispose()
         {
             if(_id != IntPtr.Zero)
@@ -71,16 +62,10 @@ namespace VideoLAN.LibVLC.Manual
         /// <returns></returns>
         public bool PostLogin(string username, string password, bool store)
         {
-            //if (_id.NativeReference == IntPtr.Zero)
-            //    throw new VLCException("Calling method on dismissed Dialog instance");
-            //var result = Native.LibVLCDialogPostLogin(_id.NativeReference, username, password, store) == 0;
-            //_id.NativeReference = IntPtr.Zero;
-
             if(_id == IntPtr.Zero)
                 throw new VLCException("Calling method on dismissed Dialog instance");
 
             var result = Native.LibVLCDialogPostLogin(_id, username, password, store) == 0;
-
             _id = IntPtr.Zero;
 
             return result;
@@ -95,12 +80,6 @@ namespace VideoLAN.LibVLC.Manual
         /// <returns>return true on success, false otherwise</returns>
         public bool PostAction(int actionIndex)
         {
-            //if(_id.NativeReference == IntPtr.Zero)
-            //    throw new VLCException("Calling method on dismissed Dialog instance");
-
-            //var result = Native.LibVLCDialogPostAction(_id.NativeReference, actionIndex) == 0;
-            //_id.NativeReference = IntPtr.Zero;
-
             if (_id == IntPtr.Zero)
                 throw new VLCException("Calling method on dismissed Dialog instance");
 
@@ -117,13 +96,9 @@ namespace VideoLAN.LibVLC.Manual
         /// <returns></returns>
         public bool Dismiss()
         {
-            //if(_id.NativeReference == IntPtr.Zero)
-            //    throw new VLCException("Calling method on dismissed Dialog instance");
-            //var result = Native.LibVLCDialogDismiss(_id.NativeReference) == 0;
-            //_id.NativeReference = IntPtr.Zero;
-
             if (_id == IntPtr.Zero)
                 throw new VLCException("Calling method on dismissed Dialog instance");
+
             var result = Native.LibVLCDialogDismiss(_id) == 0;
             _id = IntPtr.Zero;
 
@@ -145,15 +120,14 @@ namespace VideoLAN.LibVLC.Manual
 
     public delegate Task DisplayError(string title, string text);
 
-    public delegate Task DisplayLogin(string title, string text, string defaultUsername, bool askStore, CancellationToken token);
+    public delegate Task DisplayLogin(Dialog dialog, string title, string text, string defaultUsername, bool askStore, CancellationToken token);
 
-    public delegate Task DisplayQuestion(string title, string text, DialogQuestionType type, string cancelText,
+    public delegate Task DisplayQuestion(Dialog dialog, string title, string text, DialogQuestionType type, string cancelText,
         string firstActionText, string secondActionText, CancellationToken token);
 
-    public delegate Task DisplayProgress(string title, string text, bool indeterminate, float position, string cancelText, CancellationToken token);
+    public delegate Task DisplayProgress(Dialog dialog, string title, string text, bool indeterminate, float position, string cancelText, CancellationToken token);
 
-    public delegate Task UpdateProgress(float position, string text);
-
+    public delegate Task UpdateProgress(Dialog dialog, float position, string text);
 
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void DisplayErrorCallback(IntPtr data, string title, string text);
@@ -190,74 +164,5 @@ namespace VideoLAN.LibVLC.Manual
         public CancelCallback Cancel;
 
         public UpdateProgressCallback UpdateProgress;
-    }
-
-    public class DialogHandler
-    {
-        Dictionary<IntPtr, CancellationTokenSource> _cts = new Dictionary<IntPtr, CancellationTokenSource>();
-
-        struct Native
-        {
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
-                EntryPoint = "libvlc_dialog_set_callbacks")]
-            internal static extern void LibVLCDialogSetCallbacks(IntPtr instance, IntPtr callbacks, IntPtr data);
-        }
-
-        //public DialogHandler(DisplayError error, DisplayLogin login, DisplayQuestion question,
-        //    DisplayProgress displayProgress, UpdateProgress updateProgress)
-        //{
-        //    if (error == null) throw new ArgumentNullException(nameof(error));
-        //    if (login == null) throw new ArgumentNullException(nameof(login));
-        //    if (question == null) throw new ArgumentNullException(nameof(question));
-        //    if (displayProgress == null) throw new ArgumentNullException(nameof(displayProgress));
-        //    if (updateProgress == null) throw new ArgumentNullException(nameof(updateProgress));
-
-          
-        //    var dialogCbs = new DialogCallbacks
-        //    {
-        //        DisplayError = (data, title, text) =>
-        //        {
-        //            // no dialogId ?
-        //            error(title, text);
-        //        },
-        //        DisplayLogin = (data, id, title, text, username, store) =>
-        //        {
-        //            var cts = new CancellationTokenSource();
-        //            _cts.Add(id, cts);
-        //            login(title, text, username, store, cts.Token);
-        //        },
-        //        DisplayQuestion = (data, id, title, text, type, cancelText, actionText, secondActionText) =>
-        //        {
-                    
-        //        },
-        //        DisplayProgress = (data, id, title, text, indeterminate, position, cancelText) =>
-        //        {
-                    
-        //        },
-        //        Cancel = (data, id) =>
-        //        {
-                    
-        //        },
-        //        UpdateProgress = (data, id, position, text) =>
-        //        {
-                    
-        //        }
-        //    };
-
-        //    var dialogCbsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<DialogCallbacks>());
-
-        //    Marshal.StructureToPtr(dialogCbs, dialogCbsPtr, true);
-
-        //    Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
-
-
-        //}
-
-    }
-
-    public interface IDialog
-    {
-        
     }
 }
