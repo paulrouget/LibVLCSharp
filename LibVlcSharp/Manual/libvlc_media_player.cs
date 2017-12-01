@@ -723,7 +723,7 @@ namespace VideoLAN.LibVLC
             }
         }
     }
-
+    
     /// <summary>Description for audio output device.</summary>
     public unsafe partial class AudioOutputDevice : IDisposable
     {
@@ -900,62 +900,6 @@ namespace VideoLAN.LibVLC
             internal static extern sbyte* LibvlcAudioOutputDeviceGet(global::System.IntPtr mp);
 
             
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_preset_count")]
-            internal static extern uint LibvlcAudioEqualizerGetPresetCount();
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_preset_name")]
-            internal static extern global::System.IntPtr LibvlcAudioEqualizerGetPresetName(uint u_index);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_band_count")]
-            internal static extern uint LibvlcAudioEqualizerGetBandCount();
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_band_frequency")]
-            internal static extern float LibvlcAudioEqualizerGetBandFrequency(uint u_index);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_new")]
-            internal static extern global::System.IntPtr LibvlcAudioEqualizerNew();
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_new_from_preset")]
-            internal static extern global::System.IntPtr LibvlcAudioEqualizerNewFromPreset(uint u_index);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_release")]
-            internal static extern void LibvlcAudioEqualizerRelease(global::System.IntPtr p_equalizer);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_set_preamp")]
-            internal static extern int LibvlcAudioEqualizerSetPreamp(global::System.IntPtr p_equalizer, float f_preamp);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_preamp")]
-            internal static extern float LibvlcAudioEqualizerGetPreamp(global::System.IntPtr p_equalizer);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_set_amp_at_index")]
-            internal static extern int LibvlcAudioEqualizerSetAmpAtIndex(global::System.IntPtr p_equalizer, float f_amp, uint u_band);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint="libvlc_audio_equalizer_get_amp_at_index")]
-            internal static extern float LibvlcAudioEqualizerGetAmpAtIndex(global::System.IntPtr p_equalizer, uint u_band);
-
-           
 
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
@@ -977,7 +921,7 @@ namespace VideoLAN.LibVLC
         /// <param name="p_mi">media player object</param>
         //public static void LibvlcMediaPlayerRetain(global::VideoLAN.LibVLC.MediaPlayer p_mi)
         //{
-        //    var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
+        //    var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.NativeReference;
         //    __Internal.LibvlcMediaPlayerRetain(__arg0);
         //}
 
@@ -2579,217 +2523,6 @@ namespace VideoLAN.LibVLC
         //    return __ret;
         //}
 
-        /// <summary>Get the number of equalizer presets.</summary>
-        /// <returns>number of presets</returns>
-        /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static uint LibvlcAudioEqualizerGetPresetCount()
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerGetPresetCount();
-            return __ret;
-        }
-
-        /// <summary>Get the name of a particular equalizer preset.</summary>
-        /// <param name="u_index">index of the preset, counting from zero</param>
-        /// <returns>preset name, or NULL if there is no such preset</returns>
-        /// <remarks>
-        /// <para>This name can be used, for example, to prepare a preset label or menu in a user</para>
-        /// <para>interface.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static string LibvlcAudioEqualizerGetPresetName(uint u_index)
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerGetPresetName(u_index);
-            return Marshal.PtrToStringAnsi(__ret);
-        }
-
-        /// <summary>Get the number of distinct frequency bands for an equalizer.</summary>
-        /// <returns>number of frequency bands</returns>
-        /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static uint LibvlcAudioEqualizerGetBandCount()
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerGetBandCount();
-            return __ret;
-        }
-
-        /// <summary>Get a particular equalizer band frequency.</summary>
-        /// <param name="u_index">index of the band, counting from zero</param>
-        /// <returns>equalizer band frequency (Hz), or -1 if there is no such band</returns>
-        /// <remarks>
-        /// <para>This value can be used, for example, to create a label for an equalizer band control</para>
-        /// <para>in a user interface.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static float LibvlcAudioEqualizerGetBandFrequency(uint u_index)
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerGetBandFrequency(u_index);
-            return __ret;
-        }
-
-        /// <summary>Create a new default equalizer, with all frequency values zeroed.</summary>
-        /// <returns>opaque equalizer handle, or NULL on error</returns>
-        /// <remarks>
-        /// <para>The new equalizer can subsequently be applied to a media player by invoking</para>
-        /// <para>libvlc_media_player_set_equalizer().</para>
-        /// <para>The returned handle should be freed via libvlc_audio_equalizer_release() when</para>
-        /// <para>it is no longer needed.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static global::VideoLAN.LibVLC.Equalizer LibvlcAudioEqualizerNew()
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerNew();
-            global::VideoLAN.LibVLC.Equalizer __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Equalizer) global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Equalizer.__CreateInstance(__ret);
-            return __result0;
-        }
-
-        /// <summary>
-        /// <para>Create a new equalizer, with initial frequency values copied from an existing</para>
-        /// <para>preset.</para>
-        /// </summary>
-        /// <param name="u_index">index of the preset, counting from zero</param>
-        /// <returns>opaque equalizer handle, or NULL on error</returns>
-        /// <remarks>
-        /// <para>The new equalizer can subsequently be applied to a media player by invoking</para>
-        /// <para>libvlc_media_player_set_equalizer().</para>
-        /// <para>The returned handle should be freed via libvlc_audio_equalizer_release() when</para>
-        /// <para>it is no longer needed.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static global::VideoLAN.LibVLC.Equalizer LibvlcAudioEqualizerNewFromPreset(uint u_index)
-        {
-            var __ret = __Internal.LibvlcAudioEqualizerNewFromPreset(u_index);
-            global::VideoLAN.LibVLC.Equalizer __result0;
-            if (__ret == IntPtr.Zero) __result0 = null;
-            else if (global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap.ContainsKey(__ret))
-                __result0 = (global::VideoLAN.LibVLC.Equalizer) global::VideoLAN.LibVLC.Equalizer.NativeToManagedMap[__ret];
-            else __result0 = global::VideoLAN.LibVLC.Equalizer.__CreateInstance(__ret);
-            return __result0;
-        }
-
-        /// <summary>Release a previously created equalizer instance.</summary>
-        /// <param name="p_equalizer">opaque equalizer handle, or NULL</param>
-        /// <remarks>
-        /// <para>The equalizer was previously created by using libvlc_audio_equalizer_new() or</para>
-        /// <para>libvlc_audio_equalizer_new_from_preset().</para>
-        /// <para>It is safe to invoke this method with a NULL p_equalizer parameter for no effect.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static void LibvlcAudioEqualizerRelease(global::VideoLAN.LibVLC.Equalizer p_equalizer)
-        {
-            var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-            __Internal.LibvlcAudioEqualizerRelease(__arg0);
-        }
-
-        /// <summary>Set a new pre-amplification value for an equalizer.</summary>
-        /// <param name="p_equalizer">valid equalizer handle, must not be NULL</param>
-        /// <param name="f_preamp">preamp value (-20.0 to 20.0 Hz)</param>
-        /// <returns>zero on success, -1 on error</returns>
-        /// <remarks>
-        /// <para>The new equalizer settings are subsequently applied to a media player by invoking</para>
-        /// <para>libvlc_media_player_set_equalizer().</para>
-        /// <para>The supplied amplification value will be clamped to the -20.0 to +20.0 range.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static int LibvlcAudioEqualizerSetPreamp(global::VideoLAN.LibVLC.Equalizer p_equalizer, float f_preamp)
-        {
-            var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-            var __ret = __Internal.LibvlcAudioEqualizerSetPreamp(__arg0, f_preamp);
-            return __ret;
-        }
-
-        /// <summary>Get the current pre-amplification value from an equalizer.</summary>
-        /// <param name="p_equalizer">valid equalizer handle, must not be NULL</param>
-        /// <returns>preamp value (Hz)</returns>
-        /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static float LibvlcAudioEqualizerGetPreamp(global::VideoLAN.LibVLC.Equalizer p_equalizer)
-        {
-            var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-            var __ret = __Internal.LibvlcAudioEqualizerGetPreamp(__arg0);
-            return __ret;
-        }
-
-        /// <summary>Set a new amplification value for a particular equalizer frequency band.</summary>
-        /// <param name="p_equalizer">valid equalizer handle, must not be NULL</param>
-        /// <param name="f_amp">amplification value (-20.0 to 20.0 Hz)</param>
-        /// <param name="u_band">index, counting from zero, of the frequency band to set</param>
-        /// <returns>zero on success, -1 on error</returns>
-        /// <remarks>
-        /// <para>The new equalizer settings are subsequently applied to a media player by invoking</para>
-        /// <para>libvlc_media_player_set_equalizer().</para>
-        /// <para>The supplied amplification value will be clamped to the -20.0 to +20.0 range.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        public static int LibvlcAudioEqualizerSetAmpAtIndex(global::VideoLAN.LibVLC.Equalizer p_equalizer, float f_amp, uint u_band)
-        {
-            var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-            var __ret = __Internal.LibvlcAudioEqualizerSetAmpAtIndex(__arg0, f_amp, u_band);
-            return __ret;
-        }
-
-        /// <summary>Get the amplification value for a particular equalizer frequency band.</summary>
-        /// <param name="p_equalizer">valid equalizer handle, must not be NULL</param>
-        /// <param name="u_band">index, counting from zero, of the frequency band to get</param>
-        /// <returns>amplification value (Hz); NaN if there is no such frequency band</returns>
-        /// <remarks>LibVLC 2.2.0 or later</remarks>
-        public static float LibvlcAudioEqualizerGetAmpAtIndex(global::VideoLAN.LibVLC.Equalizer p_equalizer, uint u_band)
-        {
-            var __arg0 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-            var __ret = __Internal.LibvlcAudioEqualizerGetAmpAtIndex(__arg0, u_band);
-            return __ret;
-        }
-
-        /// <summary>Apply new equalizer settings to a media player.</summary>
-        /// <param name="p_mi">opaque media player handle</param>
-        /// <param name="p_equalizer">opaque equalizer handle, or NULL to disable the equalizer for this media player</param>
-        /// <returns>zero on success, -1 on error</returns>
-        /// <remarks>
-        /// <para>The equalizer is first created by invoking libvlc_audio_equalizer_new() or</para>
-        /// <para>libvlc_audio_equalizer_new_from_preset().</para>
-        /// <para>It is possible to apply new equalizer settings to a media player whether the media</para>
-        /// <para>player is currently playing media or not.</para>
-        /// <para>Invoking this method will immediately apply the new equalizer settings to the audio</para>
-        /// <para>output of the currently playing media if there is any.</para>
-        /// <para>If there is no currently playing media, the new equalizer settings will be applied</para>
-        /// <para>later if and when new media is played.</para>
-        /// <para>Equalizer settings will automatically be applied to subsequently played media.</para>
-        /// <para>To disable the equalizer for a media player invoke this method passing NULL for the</para>
-        /// <para>p_equalizer parameter.</para>
-        /// <para>The media player does not keep a reference to the supplied equalizer so it is safe</para>
-        /// <para>for an application to release the equalizer reference any time after this method</para>
-        /// <para>returns.</para>
-        /// <para>LibVLC 2.2.0 or later</para>
-        /// </remarks>
-        //public static int LibvlcMediaPlayerSetEqualizer(global::VideoLAN.LibVLC.MediaPlayer p_mi, global::VideoLAN.LibVLC.Equalizer p_equalizer)
-        //{
-        //    var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.NativeReference;
-        //    var __arg1 = ReferenceEquals(p_equalizer, null) ? global::System.IntPtr.Zero : p_equalizer.NativeReference;
-        //    var __ret = __Internal.LibvlcMediaPlayerSetEqualizer(__arg0, __arg1);
-        //    return __ret;
-        //}
-
-        /// <summary>Gets the media role.</summary>
-        /// <param name="p_mi">media player</param>
-        /// <returns>the media player role (</returns>
-        /// <remarks>LibVLC 3.0.0 and later.</remarks>
-        //public static int LibvlcMediaPlayerGetRole(global::VideoLAN.LibVLC.MediaPlayer p_mi)
-        //{
-        //    var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
-        //    var __ret = __Internal.LibvlcMediaPlayerGetRole(__arg0);
-        //    return __ret;
-        //}
-
-        /// <summary>Sets the media role.</summary>
-        /// <param name="p_mi">media player</param>
-        /// <param name="role">the media player role (</param>
-        /// <returns>0 on success, -1 on error</returns>
-        //public static int LibvlcMediaPlayerSetRole(global::VideoLAN.LibVLC.MediaPlayer p_mi, uint role)
-        //{
-        //    var __arg0 = ReferenceEquals(p_mi, null) ? global::System.IntPtr.Zero : p_mi.__Instance;
-        //    var __ret = __Internal.LibvlcMediaPlayerSetRole(__arg0, role);
-        //    return __ret;
-        //}
+       
     }
 }
