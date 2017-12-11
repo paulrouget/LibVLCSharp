@@ -4,7 +4,7 @@ using System.Security;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace VideoLAN.LibVLC.Manual
+namespace VideoLAN.LibVLC
 {
     //TODO: v3
     public class Dialog : IDisposable
@@ -65,7 +65,7 @@ namespace VideoLAN.LibVLC.Manual
             if(_id == IntPtr.Zero)
                 throw new VLCException("Calling method on dismissed Dialog instance");
 
-            var result = Native.LibVLCDialogPostLogin(_id, username, password, store) == 0;
+            var result = Native.LibVLCDialogPostLogin(_id, username ?? string.Empty, password ?? string.Empty, store) == 0;
             _id = IntPtr.Zero;
 
             return result;
@@ -82,6 +82,8 @@ namespace VideoLAN.LibVLC.Manual
         {
             if (_id == IntPtr.Zero)
                 throw new VLCException("Calling method on dismissed Dialog instance");
+            if(actionIndex != 1 && actionIndex != 2)
+                throw new IndexOutOfRangeException($"{nameof(actionIndex)} should be 1 or 2 but is {actionIndex}");
 
             var result = Native.LibVLCDialogPostAction(_id, actionIndex) == 0;
             _id = IntPtr.Zero;

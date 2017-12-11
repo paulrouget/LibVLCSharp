@@ -7,7 +7,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using VideoLAN.LibVLC.Manual;
 
 namespace VideoLAN.LibVLC
 {

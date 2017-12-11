@@ -143,7 +143,7 @@ namespace VideoLAN.LibVLC
             [SuppressUnmanagedCodeSecurity]
             [DllImport("libvlc", CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_discoverer_list_get")]
-            internal static extern ulong LibVLCMediaDiscovererListGet(IntPtr instance, MediaDiscovererCategory category,
+            internal static extern ulong LibVLCMediaDiscovererListGet(IntPtr instance, MediaDiscoverer.Category category,
                 ref IntPtr pppServices);
 
             [SuppressUnmanagedCodeSecurity]
