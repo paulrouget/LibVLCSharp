@@ -156,7 +156,6 @@ namespace VideoLAN.LibVLC
                 EntryPoint = "libvlc_dialog_set_callbacks")]
             internal static extern void LibVLCDialogSetCallbacks(IntPtr instance, IntPtr callbacks, IntPtr data);
 
-
             #region Windows
 
             /// <summary>
@@ -652,7 +651,7 @@ namespace VideoLAN.LibVLC
 
             Native.LibVLCDialogSetCallbacks(NativeReference, _dialogCbsPtr, IntPtr.Zero);
         }
-        
+
         /// <summary>
         /// Unset all callbacks
         /// </summary>
@@ -746,6 +745,7 @@ namespace VideoLAN.LibVLC
     /// <summary>Logging messages level.</summary>
     /// <remarks>Future LibVLC versions may define new levels.</remarks>
     public enum LogLevel
+
 
     {
         /// <summary>Debug message</summary>
